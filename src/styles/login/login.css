@@ -1,0 +1,178 @@
+@media only screen and (max-width: 900px) {
+  .ls-container__inner {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100%;
+  }
+  .ls-container__inner__mobonlyheader {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    padding-left: 48px;
+    font-size: 2rem;
+    color: white;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100vw;
+    height: 10vh;
+    font-weight: bold;
+    background-color: black;
+    -o-object-fit: fill;
+       object-fit: fill;
+  }
+  .ls-container__inner__logo {
+    display: none;
+  }
+  .ls-container__inner__form {
+    height: 100%;
+    padding: 40px 48px;
+    width: 100vw;
+    max-width: 400px;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .ls-container {
+    background-image: url("../../image/dark_geometric.png");
+  }
+  .ls-container__inner {
+    width: 860px;
+    height: 700px;
+    box-shadow: 3px 4px 5px -4px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 3px 4px 5px -4px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 3px 4px 5px -4px rgba(0, 0, 0, 0.75);
+  }
+  .ls-container__inner__mobonlyheader {
+    display: none;
+  }
+  .ls-container__inner__logo {
+    border-radius: 5px 0 0 5px;
+    width: 45%;
+    height: 100%;
+    background-image: url("https://i.ibb.co/9hGKYK3/login-bg.jpg");
+    background-position-x: -80px;
+  }
+  .ls-container__inner__logo__title {
+    color: black;
+    font-size: 3rem;
+    padding: 70px 30px;
+  }
+  .ls-container__inner__form {
+    width: 55%;
+    height: 100%;
+    padding: 40px 48px;
+  }
+}
+
+.ls-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.ls-container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.ls-container__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.ls-container__inner__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-radius: 0 5px 5px 0;
+  background-color: white;
+}
+
+.ls-container__inner__form .lp-header {
+  font-size: 1.5rem;
+}
+
+.ls-container__inner__form form {
+  padding-bottom: 80px;
+}
+
+.ls-container__inner__form form label {
+  font-size: 0.7rem;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.ls-container__inner__form form input {
+  border: none;
+  background-color: #f0f0f0;
+  height: 1.8rem;
+  border: #cacaca solid 1px;
+  border-radius: 2px;
+  padding-left: 6px;
+}
+
+.ls-container__inner__form form input:focus {
+  border: #7ec57e solid 1px;
+  outline: none;
+}
+
+.ls-container__inner__form form button {
+  margin-top: 25px;
+  width: 100px;
+  border: none;
+  border-radius: 2px;
+  padding: 8px;
+  font-weight: bold;
+  background-color: #9cfa9c;
+}
+
+.ls-container__inner__form form button:hover {
+  cursor: pointer;
+}
+
+.ls-container .ls-toggle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: none;
+  text-align: left;
+  width: auto;
+  background-color: white;
+}
+
+.ls-container .ls-toggle p:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+/*# sourceMappingURL=login.css.map */
