@@ -26,7 +26,7 @@
     width: 100vw;
     height: 10vh;
     font-weight: bold;
-    background-color: black;
+    background-color: #2e2e2e;
     -o-object-fit: fill;
        object-fit: fill;
   }
@@ -38,6 +38,33 @@
     padding: 40px 48px;
     width: 100vw;
     max-width: 400px;
+  }
+  .ls-container__inner .login-controls {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .ls-container__inner .login-controls .ls-toggle {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border: none;
+    text-align: left;
+    width: auto;
+    background-color: white;
+    margin-top: 10px;
+  }
+  .ls-container__inner .login-controls .ls-toggle p:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .ls-container__inner .login-controls .ls-guest:hover {
+    cursor: pointer;
+    text-decoration: underline;
   }
 }
 
@@ -63,7 +90,7 @@
     background-position-x: -80px;
   }
   .ls-container__inner__logo__title {
-    color: black;
+    color: #222222;
     font-size: 3rem;
     padding: 70px 30px;
   }
@@ -71,6 +98,31 @@
     width: 55%;
     height: 100%;
     padding: 40px 48px;
+  }
+  .ls-container__inner .login-controls {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .ls-container__inner .login-controls .ls-toggle {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border: none;
+    text-align: left;
+    width: auto;
+    background-color: white;
+  }
+  .ls-container__inner .login-controls .ls-toggle p:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .ls-container__inner .login-controls .ls-guest:hover {
+    cursor: pointer;
+    text-decoration: underline;
   }
 }
 
@@ -86,6 +138,12 @@
           align-items: center;
   width: 100vw;
   height: 100vh;
+}
+
+.ls-container .ls-error {
+  font-size: 0.7rem;
+  color: red;
+  height: 0.8rem;
 }
 
 .ls-container form {
@@ -152,27 +210,30 @@
   width: 100px;
   border: none;
   border-radius: 2px;
-  padding: 8px;
   font-weight: bold;
   background-color: #9cfa9c;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 35px;
+}
+
+.ls-container__inner__form form .load-text {
+  padding: 8px;
+}
+
+.ls-container__inner__form form .button-load {
+  height: 30px;
+  padding: 0;
 }
 
 .ls-container__inner__form form button:hover {
   cursor: pointer;
-}
-
-.ls-container .ls-toggle {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  border: none;
-  text-align: left;
-  width: auto;
-  background-color: white;
-}
-
-.ls-container .ls-toggle p:hover {
-  cursor: pointer;
-  text-decoration: underline;
 }
 /*# sourceMappingURL=login.css.map */

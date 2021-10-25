@@ -1,15 +1,18 @@
 import { useState } from 'react';
+import buttonLoad from '../../image/button_load.svg';
 
-const LoginForm = ({ onSubmit }) => {
+const LoginForm = ({ onSubmit, loading }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [usernameError, setUsernameError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
 
   return (
     <div className="lfi l-form-cont">
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          onSubmit({ username, password });
+          onSubmit({ username, password, setUsernameError, setPasswordError });
         }}
       >
         <label htmlFor="lfi__username">Username</label>
@@ -21,6 +24,7 @@ const LoginForm = ({ onSubmit }) => {
             setUsername(e.target.value);
           }}
         />
+        <p className="ls-error">{usernameError}</p>
         <label htmlFor="lfi__password">Password</label>
         <input
           type="text"
@@ -30,7 +34,15 @@ const LoginForm = ({ onSubmit }) => {
             setPassword(e.target.value);
           }}
         />
-        <button>Login</button>
+        <p className="ls-error">{passwordError}</p>
+        <button>
+          {' '}
+          {loading ? (
+            <img className="button-load" src={buttonLoad} alt="" />
+          ) : (
+            <p className="load-text">Log in</p>
+          )}
+        </button>
       </form>
     </div>
   );

@@ -10,7 +10,14 @@ function App() {
   return (
     <UserContext.Provider value={{ user, setUser }}>
       <div className="App">
-        <header className="App-header"></header>
+        <header className="App-header">Logged in as {user.username}</header>
+        <button
+          onClick={() => {
+            setUser(null);
+          }}
+        >
+          Logout
+        </button>
       </div>
     </UserContext.Provider>
   );
