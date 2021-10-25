@@ -1,0 +1,61 @@
+@media only screen and (min-width: 700px) {
+  .home__container .info-cont {
+    padding: 40px 55px;
+    margin: 30px 20px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .home__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .home__container .info-cont {
+    padding: 30px 30px;
+    margin: 20px 20px;
+  }
+}
+
+.home__splash {
+  height: 60vh;
+  max-width: 100vw;
+  background-image: url("https://i.ibb.co/TvyVnxz/karthik-balakrishnan-Nr-S53e-UKgi-E-unsplash.jpg");
+  background-size: cover;
+}
+
+.home__container {
+  text-align: center;
+  background-image: url("../../image/dark_geometric.png");
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 400px;
+}
+
+.home__container__description {
+  max-width: 700px;
+}
+
+.home__container__description h1 {
+  font-family: 'Bungee', cursive;
+  padding-bottom: 20px;
+}
+
+.home__container__latest h1 {
+  font-family: 'Bungee', cursive;
+}
+
+.home__container .info-cont {
+  min-width: 280px;
+  border-radius: 5px;
+  background-color: whitesmoke;
+}
+/*# sourceMappingURL=home.css.map */

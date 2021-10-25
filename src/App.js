@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { UserContext } from './context/user';
 import Login from './components/login/Login';
+import Header from './components/header/Header';
+import Home from './components/home/Home';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -10,14 +12,8 @@ function App() {
   return (
     <UserContext.Provider value={{ user, setUser }}>
       <div className="App">
-        <header className="App-header">Logged in as {user.username}</header>
-        <button
-          onClick={() => {
-            setUser(null);
-          }}
-        >
-          Logout
-        </button>
+        <Header />
+        <Home />
       </div>
     </UserContext.Provider>
   );

@@ -18,7 +18,7 @@ export const logIn = async ({
   console.log(message);
 
   if (message) {
-    setUsernameError("Username doesn't exist");
+    setUsernameError("Username doesn't exist - Case sensitive.");
   } else {
     return true;
   }
@@ -46,6 +46,4 @@ export const SignUpSubmit = async ({
   if (errorType === 'Username') setUsernameError('Username already exists');
   if (errorType === 'Email') setEmailError('Email already exists');
   if (password.length < 5) setPasswordError('Invalid password');
-
-  return false;
 };

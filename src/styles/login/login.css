@@ -17,7 +17,7 @@
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
-    padding-left: 48px;
+    padding-left: 40px;
     font-size: 2rem;
     color: white;
     -webkit-box-align: center;
@@ -29,6 +29,7 @@
     background-color: #2e2e2e;
     -o-object-fit: fill;
        object-fit: fill;
+    font-family: 'Bungee', cursive;
   }
   .ls-container__inner__logo {
     display: none;
@@ -90,8 +91,9 @@
     background-position-x: -80px;
   }
   .ls-container__inner__logo__title {
-    color: #222222;
-    font-size: 3rem;
+    color: #720b0b;
+    font-family: 'Bungee', cursive;
+    font-size: 3.5rem;
     padding: 70px 30px;
   }
   .ls-container__inner__form {

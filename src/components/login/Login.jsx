@@ -8,22 +8,29 @@ const Login = ({ setUser }) => {
   const [logSignToggle, setLogSignToggle] = useState(true);
   const [loading, setLoading] = useState(false);
 
+  const storeUser = (user) => {
+    setUser(user);
+    localStorage.setItem('storedUser', JSON.stringify(user));
+  };
+
+  const guestLogin = async () => {};
+
   const onSubmit = async (input) => {
     const { username, email } = input;
 
     setLoading(true);
     if (logSignToggle) {
       const result = await SignUpSubmit(input);
-      console.log(result);
-      if (result) setUser({ username, email });
+      if (result) storeUser({ username, email });
+      setLoading(false);
     } else {
       const result = await logIn(input);
-      if (result) setUser({ username, email });
+      if (result) storeUser({ username, email });
+      setLoading(false);
     }
-    setLoading(false);
   };
 
-  const toggleLoginSignup = () => {
+  const toggleLoginSignUp = () => {
     setLogSignToggle((bool) => !bool);
   };
 
@@ -43,11 +50,13 @@ const Login = ({ setUser }) => {
           )}
           <div className="login-controls">
             <button className="ls-toggle">
-              <p onClick={toggleLoginSignup}>
+              <p onClick={toggleLoginSignUp}>
                 {logSignToggle ? 'Already have an account? Log in' : 'Join'}
               </p>
             </button>
-            <button className="ls-toggle ls-guest">Login as guest</button>
+            <button className="ls-toggle ls-guest" onClick={guestLogin}>
+              Login as guest
+            </button>
           </div>
         </div>
       </div>

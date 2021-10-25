@@ -1,0 +1,69 @@
+@media only screen and (min-width: 700px) {
+  .logonav img {
+    padding-right: 30px;
+  }
+  .logonav .hamburger {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .logonav button {
+    display: none;
+  }
+  .logonav .hamburger {
+    z-index: 10;
+    color: white;
+    position: absolute;
+    right: 10px;
+    top: 7px;
+  }
+}
+
+header {
+  background-image: url("../../image/dark_geometric.png");
+}
+
+header .colour-accent {
+  width: 100vw;
+  background-color: #ffae18;
+  height: 5px;
+}
+
+header .logonav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header .logonav img {
+  height: 100px;
+  margin: 20px;
+}
+
+header .logonav button {
+  background-color: rgba(202, 0, 0, 0);
+  color: white;
+  border: none;
+  font-family: 'Bungee', cursive;
+  padding: 20px;
+  font-size: 1.2rem;
+}
+
+header .logonav button:hover::first-letter {
+  color: #ffae18;
+}
+
+header .logonav button:hover {
+  border-radius: 0 0 5px 5px;
+  cursor: pointer;
+}
+/*# sourceMappingURL=header.css.map */

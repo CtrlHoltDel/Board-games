@@ -1,0 +1,65 @@
+$primary-colour: rgb(255, 174, 24);
+
+@media only screen and (min-width: 700px) {
+  .logonav {
+    img {
+      padding-right: 30px;
+    }
+    .hamburger {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  header {
+    display: flex;
+    justify-content: center;
+  }
+  .logonav {
+    button {
+      display: none;
+    }
+    .hamburger {
+      z-index: 10;
+      color: white;
+      position: absolute;
+      right: 10px;
+      top: 7px;
+    }
+  }
+}
+
+header {
+  .colour-accent {
+    width: 100vw;
+    background-color: $primary-colour;
+    height: 5px;
+  }
+  background-image: url('../../image/dark_geometric.png');
+
+  .logonav {
+    display: flex;
+    img {
+      height: 100px;
+      margin: 20px;
+    }
+    button {
+      background-color: rgba(202, 0, 0, 0);
+      color: white;
+      border: none;
+      font-family: 'Bungee', cursive;
+      padding: 20px;
+      font-size: 1.2rem;
+    }
+
+    button:hover::first-letter {
+      color: $primary-colour;
+    }
+
+    button:hover {
+      border-radius: 0 0 5px 5px;
+      cursor: pointer;
+    }
+  }
+}
