@@ -1,0 +1,88 @@
+.reviews-main {
+  width: 100vw;
+}
+
+.reviews-main .review-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.reviews-main .review-list__container {
+  max-width: 600px;
+  width: 80%;
+  min-width: 300px;
+}
+
+.reviews-main .review-list__container__imagecont {
+  position: relative;
+}
+
+.reviews-main .review-list__container__imagecont__image {
+  width: 100%;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.reviews-main .review-list__container__imagecont__title {
+  color: white;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.39);
+  padding: 4px;
+  border-radius: 4px;
+  max-width: 220px;
+}
+
+.reviews-main .review-list__container__imagecont__interaction {
+  color: white;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background-color: rgba(255, 255, 255, 0.87);
+  color: black;
+  font-size: 1.1rem;
+  padding: 2px 5px;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.reviews-main .review-list__container__imagecont__interaction__cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.reviews-main .review-list__container__imagecont__interaction__cont__icon {
+  font-size: 1.3rem;
+  padding-right: 4px;
+}
+
+.reviews-main .review-list__container:hover {
+  opacity: 85%;
+}
+/*# sourceMappingURL=reviews.css.map */

@@ -1,0 +1,64 @@
+.reviews-main {
+  width: 100vw;
+
+  .review-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__container {
+      max-width: 600px;
+
+      width: 80%;
+      min-width: 300px;
+
+      &__imagecont {
+        position: relative;
+        &__image {
+          width: 100%;
+          height: 100px;
+          object-fit: cover;
+        }
+
+        &__title {
+          color: white;
+          position: absolute;
+          bottom: 10px;
+          left: 10px;
+          background-color: rgba(0, 0, 0, 0.39);
+          padding: 4px;
+          border-radius: 4px;
+          max-width: 220px;
+        }
+
+        &__interaction {
+          color: white;
+          position: absolute;
+          right: 10px;
+          top: 10px;
+          background-color: rgba(255, 255, 255, 0.87);
+          color: black;
+          font-size: 1.1rem;
+          padding: 2px 5px;
+          border-radius: 5px;
+          display: flex;
+          flex-direction: column;
+
+          &__cont {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &__icon {
+              font-size: 1.3rem;
+              padding-right: 4px;
+            }
+          }
+        }
+      }
+    }
+
+    &__container:hover {
+      opacity: 85%;
+    }
+  }
+}
