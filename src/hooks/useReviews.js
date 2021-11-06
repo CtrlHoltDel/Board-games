@@ -1,15 +1,15 @@
-import { useState } from 'react';
-import { useEffect } from 'react';
-import { getList } from '../api/actions';
+import { useState } from "react";
+import { useEffect } from "react";
+import { getList } from "../api/actions";
 
-export const useReviews = (limit = 10, p = 0) => {
+export const useReviews = (p = 0) => {
   const [reviewList, setReviewList] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchReviews = async () => {
       setLoading(true);
-      const { reviews } = await getList('/reviews', { limit });
+      const { reviews } = await getList("/reviews");
       setReviewList((currentReviews) => {
         return [...currentReviews, ...reviews];
       });
@@ -17,7 +17,8 @@ export const useReviews = (limit = 10, p = 0) => {
     };
 
     fetchReviews();
-  }, [limit, p]);
+    console.log(reviewList.length);
+  }, [p]);
 
   const loadMore = () => {};
 

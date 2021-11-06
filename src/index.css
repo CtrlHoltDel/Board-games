@@ -2,5 +2,9 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-image: url("./image/dark_geometric.png");
 }

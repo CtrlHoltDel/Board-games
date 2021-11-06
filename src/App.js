@@ -1,17 +1,17 @@
-import { useState } from 'react';
-import { UserContext } from './context/user';
-import Login from './components/login/Login';
-import Header from './components/header/Header';
-import Home from './components/home/Home';
-import { Route, Switch } from 'react-router';
-import Reviews from './components/reviews/Reviews';
-import { useEffect } from 'react';
+import { useState } from "react";
+import { UserContext } from "./context/user";
+import Login from "./components/login/Login";
+import Header from "./components/header/Header";
+import Home from "./components/home/Home";
+import { Route, Switch } from "react-router";
+import Reviews from "./components/reviews/Reviews";
+import { useEffect } from "react";
 
 function App() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const storedUser = localStorage.getItem('storedUser');
+    const storedUser = localStorage.getItem("storedUser");
     if (storedUser) setUser(JSON.parse(storedUser));
   }, []);
 

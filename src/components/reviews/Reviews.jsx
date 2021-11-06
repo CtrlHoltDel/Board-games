@@ -1,11 +1,12 @@
-import '../../styles/reviews/reviews.css';
+import "../../styles/reviews/reviews.css";
 
-import ReviewList from './ReviewList';
+import ReviewList from "./ReviewList";
 
-import { useReviews } from '../../hooks/useReviews';
+import { useReviews } from "../../hooks/useReviews";
 
 const Reviews = () => {
   const { reviewList, loading, loadMore } = useReviews();
+  console.log("remounting");
 
   const reviews = () => {
     return loading ? (
@@ -13,7 +14,9 @@ const Reviews = () => {
     ) : (
       <>
         <ReviewList reviewList={reviewList} />
-        <button onClick={loadMore}>Load more</button>
+        <button className="reviews-main__load-more-button" onClick={loadMore}>
+          Load more
+        </button>
       </>
     );
   };

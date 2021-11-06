@@ -18,7 +18,7 @@
         font-weight: bold;
         background-color: rgb(46, 46, 46);
         object-fit: fill;
-        font-family: 'Bungee', cursive;
+        font-family: "Bungee", cursive;
       }
       &__logo {
         display: none;
@@ -70,12 +70,12 @@
         border-radius: 5px 0 0 5px;
         width: 45%;
         height: 100%;
-        background-image: url('https://i.ibb.co/9hGKYK3/login-bg.jpg');
+        background-image: url("https://i.ibb.co/9hGKYK3/login-bg.jpg");
         background-position-x: -80px;
 
         &__title {
           color: rgb(114, 11, 11);
-          font-family: 'Bungee', cursive;
+          font-family: "Bungee", cursive;
           font-size: 3.5rem;
           padding: 70px 30px;
         }
@@ -106,7 +106,7 @@
         }
       }
     }
-    background-image: url('../../image/dark_geometric.png');
+    background-image: url("../../image/dark_geometric.png");
   }
 }
 

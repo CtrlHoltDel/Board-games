@@ -1,22 +1,25 @@
 .reviews-main {
-  width: 100vw;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   .review-list {
+    width: 100vw;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     &__container {
       max-width: 600px;
-
       width: 80%;
       min-width: 300px;
+      margin-top: 10px;
 
       &__imagecont {
         position: relative;
         &__image {
-          width: 100%;
+          border-radius: 5px 5px 5px 0;
           height: 100px;
+          width: 100%;
           object-fit: cover;
         }
 
@@ -60,5 +63,19 @@
     &__container:hover {
       opacity: 85%;
     }
+  }
+
+  &__load-more-button {
+    border: none;
+    background-color: none;
+    padding: 20px;
+    margin: 15px;
+    background-color: rgb(140, 140, 230);
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+  }
+  &__load-more-button:hover {
+    cursor: pointer;
   }
 }
