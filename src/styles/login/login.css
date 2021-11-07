@@ -17,6 +17,7 @@
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
+    text-align: center;
     padding-left: 40px;
     font-size: 2rem;
     color: white;
@@ -26,7 +27,6 @@
     width: 100vw;
     height: 10vh;
     font-weight: bold;
-    background-color: #2e2e2e;
     -o-object-fit: fill;
        object-fit: fill;
     font-family: "Bungee", cursive;
@@ -38,7 +38,9 @@
     height: 100%;
     padding: 40px 48px;
     width: 100vw;
-    max-width: 400px;
+    min-width: 320px;
+    border-radius: 0 15px 0 0;
+    background-color: gray;
   }
   .ls-container__inner .login-controls {
     display: -webkit-box;
@@ -89,6 +91,7 @@
     height: 100%;
     background-image: url("https://i.ibb.co/9hGKYK3/login-bg.jpg");
     background-position-x: -80px;
+    background-size: cover;
   }
   .ls-container__inner__logo__title {
     color: #720b0b;
@@ -100,6 +103,7 @@
     width: 55%;
     height: 100%;
     padding: 40px 48px;
+    border-radius: 0 5px 5px 0;
   }
   .ls-container__inner .login-controls {
     display: -webkit-box;
@@ -175,7 +179,6 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  border-radius: 0 5px 5px 0;
   background-color: white;
 }
 

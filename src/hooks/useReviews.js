@@ -17,7 +17,6 @@ export const useReviews = (p = 0) => {
     };
 
     fetchReviews();
-    console.log(reviewList.length);
   }, [p]);
 
   const loadMore = () => {};

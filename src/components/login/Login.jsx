@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import SignUp from './SignUpForm';
-import LoginForm from './LoginForm';
-import '../../styles/login/login.css';
-import { logIn, SignUpSubmit } from '../../utils/login';
+import { useState } from "react";
+import SignUp from "./SignUpForm";
+import LoginForm from "./LoginForm";
+import "../../styles/login/login.css";
+import { logIn, SignUpSubmit } from "../../utils/login";
 
 const Login = ({ setUser }) => {
   const [logSignToggle, setLogSignToggle] = useState(true);
@@ -10,10 +10,12 @@ const Login = ({ setUser }) => {
 
   const storeUser = (user) => {
     setUser(user);
-    localStorage.setItem('storedUser', JSON.stringify(user));
+    localStorage.setItem("storedUser", JSON.stringify(user));
   };
 
-  const guestLogin = async () => {};
+  const guestLogin = async () => {
+    setUser({ username: "guest", email: "guestUser@guest.com" });
+  };
 
   const onSubmit = async (input) => {
     const { username, email } = input;
@@ -42,7 +44,7 @@ const Login = ({ setUser }) => {
         </div>
         <div className="ls-container__inner__mobonlyheader">Roared Games</div>
         <div className="ls-container__inner__form">
-          <p className="lp-header">{logSignToggle ? 'Sign up' : 'Log in'}</p>
+          <p className="lp-header">{logSignToggle ? "Sign up" : "Log in"}</p>
           {logSignToggle ? (
             <SignUp onSubmit={onSubmit} logSignToggle loading={loading} />
           ) : (
@@ -51,7 +53,7 @@ const Login = ({ setUser }) => {
           <div className="login-controls">
             <button className="ls-toggle">
               <p onClick={toggleLoginSignUp}>
-                {logSignToggle ? 'Already have an account? Log in' : 'Join'}
+                {logSignToggle ? "Already have an account? Log in" : "Join"}
               </p>
             </button>
             <button className="ls-toggle ls-guest" onClick={guestLogin}>
