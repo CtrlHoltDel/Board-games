@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import buttonLoad from '../../image/button_load.svg';
+import { useState } from "react";
+import buttonLoad from "../../image/button_load.svg";
 
 const LoginForm = ({ onSubmit, loading }) => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [usernameError, setUsernameError] = useState('');
-  const [passwordError, setPasswordError] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [usernameError, setUsernameError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
 
   return (
     <div className="lfi l-form-cont">
@@ -36,7 +36,6 @@ const LoginForm = ({ onSubmit, loading }) => {
         />
         <p className="ls-error">{passwordError}</p>
         <button>
-          {' '}
           {loading ? (
             <img className="button-load" src={buttonLoad} alt="" />
           ) : (

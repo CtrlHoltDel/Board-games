@@ -1,28 +1,34 @@
-import { useContext } from "react";
-import { UserContext } from "../../context/user";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import "../../styles/animations/button.css";
 
 const NavBar = () => {
-  const { setUser } = useContext(UserContext);
+  const [currentPage, setCurrentPage] = useState("reviews");
 
-  const logout = () => {
-    setUser(null);
+  const navLink = (endpoint, buttonText) => {
+    return (
+      <Link to={`/${endpoint}`} onClick={() => setCurrentPage(endpoint)}>
+        <button
+          className={
+            currentPage === endpoint ? "full-underline" : "animated-underline"
+          }
+        >
+          {buttonText}
+        </button>
+      </Link>
+    );
   };
+
+  const buttons = [
+    ["reviews", "Reviews"],
+    ["community", "Community"],
+    ["profile", "Profile"],
+    ["add_review", "Add Review"],
+  ];
+
   return (
     <nav>
-      <Link to="/reviews">
-        <button>Reviews</button>
-      </Link>
-      <Link to="/community">
-        <button>Community</button>
-      </Link>
-      <Link to="/profile">
-        <button>Profile</button>
-      </Link>
-      <Link to="/add_review">
-        <button>Add Review</button>
-      </Link>
-      <button onClick={logout}>Logout</button>
+      {buttons.map(([endpoint, buttonName]) => navLink(endpoint, buttonName))}
     </nav>
   );
 };

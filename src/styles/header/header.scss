@@ -1,10 +1,8 @@
 $primary-colour: rgb(255, 174, 24);
 
 @media only screen and (min-width: 700px) {
-  header {
-  }
   .logonav {
-    width: 100%;
+    width: 100vw;
     img {
       padding-right: 30px;
     }
@@ -15,11 +13,32 @@ $primary-colour: rgb(255, 174, 24);
   .hamburger {
     display: none;
   }
+  .user-nav-info {
+    position: absolute;
+    top: 10px;
+    background-color: transparent;
+    color: white;
+    right: 20px;
+    font-family: "Bungee", cursive;
+    font-size: 0.8rem;
+
+    button {
+      border: none;
+      font-size: 0.8rem;
+      font-family: "Bungee", cursive;
+      color: white;
+      background-color: transparent;
+      padding: 10px 0 5px 0;
+      text-decoration: underline;
+    }
+
+    button:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 @media only screen and (max-width: 700px) {
-  header {
-  }
   .logonav {
     justify-content: center;
     button {
@@ -33,38 +52,35 @@ $primary-colour: rgb(255, 174, 24);
     right: 10px;
     top: 7px;
   }
+
+  .user-nav-info {
+    display: none;
+  }
 }
 
 header {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  .colour-accent {
-    width: 100vw;
-    background-color: $primary-colour;
-    height: 5px;
-  }
-  background-image: url('../../image/dark_geometric.png');
+  background-image: url("../../image/dark_geometric.png");
 
   .logonav {
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    nav {
+      display: flex;
+      justify-content: center;
+      width: 100vw;
+      background-color: rgba(255, 255, 255, 0.082);
+    }
     img {
-      height: 100px;
-      margin: 20px;
+      height: 60px;
+      margin: 15px 0 10px 0;
     }
     button {
-      background-color: rgba(202, 0, 0, 0);
-      color: white;
       border: none;
-      font-family: 'Bungee', cursive;
-      padding: 20px;
-      font-size: 1.2rem;
-    }
-
-    button:hover {
-      color: $primary-colour;
-      border-radius: 0 0 5px 5px;
-      cursor: pointer;
+      font-family: "Bungee", cursive;
+      margin: 0 10px 5px 10px;
+      padding: 10px 0 5px 0;
     }
   }
 }
@@ -74,7 +90,7 @@ header {
   right: 0;
   top: 0;
   width: 250px;
-  background-image: url('../../image/dark_geometric.png');
+  background-image: url("../../image/dark_geometric.png");
   height: 100vh;
   z-index: 2;
 
@@ -84,7 +100,7 @@ header {
     flex-direction: column;
 
     button {
-      font-family: 'Bungee', cursive;
+      font-family: "Bungee", cursive;
       padding: 20px;
       font-size: 1.2rem;
       color: white;

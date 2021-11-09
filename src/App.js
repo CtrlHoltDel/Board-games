@@ -2,7 +2,6 @@ import { useState } from "react";
 import { UserContext } from "./context/user";
 import Login from "./components/login/Login";
 import Header from "./components/header/Header";
-import Home from "./components/home/Home";
 import { Route, Switch } from "react-router";
 import Reviews from "./components/reviews/Reviews";
 import { useEffect } from "react";
@@ -20,10 +19,8 @@ function App() {
   return (
     <UserContext.Provider value={{ user, setUser }}>
       <div className="App">
-        <Header />
-
+        <Header setUser={setUser} user={user} />
         <Switch>
-          <Route exact path="/" component={Home} />
           <Route exact path="/reviews" component={Reviews} />
         </Switch>
       </div>

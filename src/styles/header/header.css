@@ -1,6 +1,6 @@
 @media only screen and (min-width: 700px) {
   .logonav {
-    width: 100%;
+    width: 100vw;
   }
   .logonav img {
     padding-right: 30px;
@@ -10,6 +10,27 @@
   }
   .hamburger {
     display: none;
+  }
+  .user-nav-info {
+    position: absolute;
+    top: 10px;
+    background-color: transparent;
+    color: white;
+    right: 20px;
+    font-family: "Bungee", cursive;
+    font-size: 0.8rem;
+  }
+  .user-nav-info button {
+    border: none;
+    font-size: 0.8rem;
+    font-family: "Bungee", cursive;
+    color: white;
+    background-color: transparent;
+    padding: 10px 0 5px 0;
+    text-decoration: underline;
+  }
+  .user-nav-info button:hover {
+    cursor: pointer;
   }
 }
 
@@ -29,52 +50,52 @@
     right: 10px;
     top: 7px;
   }
+  .user-nav-info {
+    display: none;
+  }
 }
 
 header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   background-image: url("../../image/dark_geometric.png");
-}
-
-header .colour-accent {
-  width: 100vw;
-  background-color: #ffae18;
-  height: 5px;
 }
 
 header .logonav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .logonav nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100vw;
+  background-color: rgba(255, 255, 255, 0.082);
 }
 
 header .logonav img {
-  height: 100px;
-  margin: 20px;
+  height: 60px;
+  margin: 15px 0 10px 0;
 }
 
 header .logonav button {
-  background-color: rgba(202, 0, 0, 0);
-  color: white;
   border: none;
-  font-family: 'Bungee', cursive;
-  padding: 20px;
-  font-size: 1.2rem;
-}
-
-header .logonav button:hover {
-  color: #ffae18;
-  border-radius: 0 0 5px 5px;
-  cursor: pointer;
+  font-family: "Bungee", cursive;
+  margin: 0 10px 5px 10px;
+  padding: 10px 0 5px 0;
 }
 
 .mob-nav {
@@ -99,7 +120,7 @@ header .logonav button:hover {
 }
 
 .mob-nav nav button {
-  font-family: 'Bungee', cursive;
+  font-family: "Bungee", cursive;
   padding: 20px;
   font-size: 1.2rem;
   color: white;

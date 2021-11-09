@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import buttonLoad from '../../image/button_load.svg';
+import { useState } from "react";
+import buttonLoad from "../../image/button_load.svg";
 
 const SignUp = ({ onSubmit, loading }) => {
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [usernameError, setUsernameError] = useState('');
-  const [emailError, setEmailError] = useState('');
-  const [passwordError, setPasswordError] = useState('');
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [usernameError, setUsernameError] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
 
   return (
     <div className="sfi l-form-cont">

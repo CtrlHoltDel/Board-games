@@ -3,6 +3,7 @@ import SignUp from "./SignUpForm";
 import LoginForm from "./LoginForm";
 import "../../styles/login/login.css";
 import { logIn, SignUpSubmit } from "../../utils/login";
+import { Link } from "react-router-dom";
 
 const Login = ({ setUser }) => {
   const [logSignToggle, setLogSignToggle] = useState(true);
@@ -56,9 +57,11 @@ const Login = ({ setUser }) => {
                 {logSignToggle ? "Already have an account? Log in" : "Join"}
               </p>
             </button>
-            <button className="ls-toggle ls-guest" onClick={guestLogin}>
-              Login as guest
-            </button>
+            <Link to="/reviews" style={{ textDecoration: "none" }}>
+              <button className="ls-toggle ls-guest" onClick={guestLogin}>
+                Login as guest
+              </button>
+            </Link>
           </div>
         </div>
       </div>
