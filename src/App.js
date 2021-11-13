@@ -1,10 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { UserContext } from "./context/user";
+import { Route, Switch } from "react-router";
 import Login from "./components/login/Login";
 import Header from "./components/header/Header";
-import { Route, Switch } from "react-router";
 import Reviews from "./components/reviews/Reviews";
-import { useEffect } from "react";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -21,7 +20,9 @@ function App() {
       <div className="App">
         <Header setUser={setUser} user={user} />
         <Switch>
-          <Route exact path="/reviews" component={Reviews} />
+          <Route exact path="/reviews">
+            {(props) => <Reviews />}
+          </Route>
         </Switch>
       </div>
     </UserContext.Provider>
