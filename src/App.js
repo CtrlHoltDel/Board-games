@@ -20,9 +20,7 @@ function App() {
       <div className="App">
         <Header setUser={setUser} user={user} />
         <Switch>
-          <Route exact path="/reviews">
-            {(props) => <Reviews />}
-          </Route>
+          <Route exact path="/reviews" component={Reviews} />
         </Switch>
       </div>
     </UserContext.Provider>

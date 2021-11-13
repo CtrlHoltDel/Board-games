@@ -1,4 +1,3 @@
-import { memo } from "react";
 import useCategories from "../../hooks/useCategories.js";
 
 const CategoryPicker = ({ addQuery, currCategory }) => {
@@ -23,4 +22,4 @@ const CategoryPicker = ({ addQuery, currCategory }) => {
   );
 };
 
-export default memo(CategoryPicker);
+export default CategoryPicker;

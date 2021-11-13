@@ -13,21 +13,19 @@ const Reviews = () => {
       <div>Loading...</div>
     ) : (
       <>
-        <CategoryPicker addQuery={addQuery} />
         <ReviewList reviewList={reviewList} />
-        <button
-          className="reviews-main__load-more-button"
-          onClick={() => {
-            addQuery("category", "strategy");
-          }}
-        >
-          Load more
-        </button>
       </>
     );
   };
 
-  return <div className="reviews-main">{reviews()}</div>;
+  return (
+    <>
+      <div className="reviews-main">
+        <CategoryPicker addQuery={addQuery} />
+        {reviews()}
+      </div>
+    </>
+  );
 };
 
 export default Reviews;
