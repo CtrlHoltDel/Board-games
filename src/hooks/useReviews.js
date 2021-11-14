@@ -27,7 +27,7 @@ export const useReviews = () => {
   const pickCategory = (key, value) => {
     setQueries(() => {
       if (queries[key] === value) return { ...queries, [key]: "" };
-      return { ...queries, [key]: value };
+      return { ...queries, [key]: value, p: 1 };
     });
   };
 
@@ -43,6 +43,12 @@ export const useReviews = () => {
     });
   };
 
+  const pagePicker = (page) => {
+    setQueries((currentQueries) => {
+      return { ...currentQueries, p: page };
+    });
+  };
+
   return {
     reviewList,
     loading,
@@ -50,5 +56,6 @@ export const useReviews = () => {
     sortReviews,
     search,
     pagesAmount,
+    pagePicker,
   };
 };

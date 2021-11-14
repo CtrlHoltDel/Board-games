@@ -243,4 +243,24 @@
 .reviews-main__order select option {
   background-color: #866464;
 }
+
+.reviews-main__page-picker {
+  margin-bottom: 10px;
+}
+
+.reviews-main__page-picker button {
+  border: none;
+  background-color: transparent;
+  padding: 5px 10px;
+  background-color: #313131;
+  color: #ffae18;
+  border-radius: 5px;
+  margin: 0 5px;
+  font-weight: bolder;
+}
+
+.reviews-main__page-picker button:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
 /*# sourceMappingURL=reviews.css.map */

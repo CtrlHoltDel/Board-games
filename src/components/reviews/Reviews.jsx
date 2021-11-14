@@ -7,6 +7,7 @@ import CategoryPicker from "./CategoryPicker";
 import OrderDropDown from "./OrderDropDown";
 import SearchBar from "./SearchBar";
 import Loading from "../reusable/Loading";
+import PagePicker from "./PagePicker";
 
 const Reviews = () => {
   const {
@@ -16,6 +17,7 @@ const Reviews = () => {
     sortReviews,
     search,
     pagesAmount,
+    pagePicker,
   } = useReviews();
 
   const reviews = () => {
@@ -23,7 +25,11 @@ const Reviews = () => {
       <Loading class_name={"large-loading"} />
     ) : (
       <>
-        <ReviewList reviewList={reviewList} />
+        {!reviewList.length ? (
+          <div>No Reviews Matching that search</div>
+        ) : (
+          <ReviewList reviewList={reviewList} />
+        )}
       </>
     );
   };
@@ -35,7 +41,7 @@ const Reviews = () => {
         <OrderDropDown sortReviews={sortReviews} />
         <SearchBar search={search} />
         {reviews()}
-        {pagesAmount}
+        <PagePicker pagesAmount={pagesAmount} pagePicker={pagePicker} />
       </div>
     </>
   );

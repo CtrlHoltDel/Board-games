@@ -192,4 +192,24 @@ $secondary-colour: #313131;
       @include drop-down();
     }
   }
+
+  &__page-picker {
+    margin-bottom: 10px;
+
+    button {
+      border: none;
+      background-color: transparent;
+      padding: 5px 10px;
+      background-color: $secondary-colour;
+      color: $primary-colour;
+      border-radius: 5px;
+      margin: 0 5px;
+      font-weight: bolder;
+    }
+
+    button:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
 }
