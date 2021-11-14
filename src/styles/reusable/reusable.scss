@@ -14,10 +14,22 @@
   }
 }
 
-.cat-bar {
-  height: 56px;
-  @include center();
-  img {
-    height: 50%;
+@media only screen and (min-width: 999px) {
+  .cat-bar {
+    height: 56px;
+    @include center();
+    img {
+      height: 50%;
+    }
+  }
+}
+
+@media only screen and (max-width: 999px) {
+  .cat-bar {
+    height: 46px;
+    @include center();
+    img {
+      height: 50%;
+    }
   }
 }

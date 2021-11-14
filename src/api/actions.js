@@ -1,11 +1,10 @@
-import axios from 'axios';
+import axios from "axios";
 
 const api = axios.create({
-  baseURL: 'https://chd-board-games.herokuapp.com/api/',
+  baseURL: "https://chd-board-games.herokuapp.com/api/",
 });
 
 export const checkUser = async (username) => {
-  console.log(username);
   try {
     await api.get(`/users/${username}`);
     return null;
@@ -16,7 +15,7 @@ export const checkUser = async (username) => {
 
 export const addUser = async (body) => {
   try {
-    await api.post('/users', body);
+    await api.post("/users", body);
 
     return null;
   } catch (err) {
@@ -30,5 +29,14 @@ export const getList = async (endpoint, queries) => {
     return data;
   } catch (err) {
     console.dir(err);
+  }
+};
+
+export const getItem = async (type, value) => {
+  try {
+    const { data } = await api.get(`${type}/${value}`);
+    return data;
+  } catch (err) {
+    console.log(err);
   }
 };

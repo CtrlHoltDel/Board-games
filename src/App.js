@@ -5,6 +5,7 @@ import Login from "./components/login/Login";
 import Header from "./components/header/Header";
 import Reviews from "./components/reviews/Reviews";
 import "./styles/reusable/reusable.css";
+import Review from "./components/review/Review";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -22,6 +23,7 @@ function App() {
         <Header setUser={setUser} user={user} />
         <Switch>
           <Route exact path="/reviews" component={Reviews} />
+          <Route exact path="/reviews/:reviewId" component={Review} />
         </Switch>
       </div>
     </UserContext.Provider>

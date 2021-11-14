@@ -4,12 +4,12 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
-@media only screen and (min-width: 700px) {
-  html {
-    overflow: -moz-scrollbars-vertical;
-    overflow-y: scroll;
-  }
+/* @media only screen and (min-width: 700px) { */
+html {
+  overflow: -moz-scrollbars-vertical;
+  overflow-y: scroll;
 }
+/* } */
 
 body {
   background-color: rgb(235, 235, 235);
