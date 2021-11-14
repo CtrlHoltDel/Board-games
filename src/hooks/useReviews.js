@@ -6,12 +6,15 @@ export const useReviews = () => {
   const [reviewList, setReviewList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [queries, setQueries] = useState({ p: 1 });
+  const [pagesAmount, setPagesAmount] = useState(1);
 
   useEffect(() => {
     const fetchReviews = async () => {
       setLoading(true);
       console.log(queries);
-      const { reviews } = await getList("/reviews", queries);
+      const response = await getList("/reviews", queries);
+      const { reviews, count } = response;
+      setPagesAmount(Math.round(count / 10));
       setReviewList(() => {
         return [...reviews];
       });
@@ -40,5 +43,12 @@ export const useReviews = () => {
     });
   };
 
-  return { reviewList, loading, pickCategory, sortReviews, search };
+  return {
+    reviewList,
+    loading,
+    pickCategory,
+    sortReviews,
+    search,
+    pagesAmount,
+  };
 };

@@ -9,8 +9,14 @@ import SearchBar from "./SearchBar";
 import Loading from "../reusable/Loading";
 
 const Reviews = () => {
-  const { reviewList, loading, pickCategory, sortReviews, search } =
-    useReviews();
+  const {
+    reviewList,
+    loading,
+    pickCategory,
+    sortReviews,
+    search,
+    pagesAmount,
+  } = useReviews();
 
   const reviews = () => {
     return loading ? (
@@ -29,6 +35,7 @@ const Reviews = () => {
         <OrderDropDown sortReviews={sortReviews} />
         <SearchBar search={search} />
         {reviews()}
+        {pagesAmount}
       </div>
     </>
   );
