@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router";
 import Login from "./components/login/Login";
 import Header from "./components/header/Header";
 import Reviews from "./components/reviews/Reviews";
+import "./styles/reusable/reusable.css";
 
 function App() {
   const [user, setUser] = useState(null);

@@ -7,7 +7,11 @@ const NavBar = () => {
 
   const navLink = (endpoint, buttonText) => {
     return (
-      <Link to={`/${endpoint}`} onClick={() => setCurrentPage(endpoint)}>
+      <Link
+        key={endpoint}
+        to={`/${endpoint}`}
+        onClick={() => setCurrentPage(endpoint)}
+      >
         <button
           className={
             currentPage === endpoint ? "full-underline" : "animated-underline"

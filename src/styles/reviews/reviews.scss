@@ -1,7 +1,115 @@
+$primary-colour: #ffae18;
+$secondary-colour: #313131;
+
+@mixin drop-down {
+  width: 200px;
+  background-color: $secondary-colour;
+  border: none;
+  border-radius: 2px;
+  color: white;
+  padding: 5px 0;
+  text-align: center;
+  font-family: "Bungee", cursive;
+  option {
+    background-color: rgb(134, 100, 100);
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .reviews-main {
+    &__categories {
+      margin: 10px 0;
+      button {
+        border: none;
+        padding: 10px 10px;
+        font-family: "Bungee", cursive;
+      }
+
+      &__first {
+        padding-left: 20px !important;
+        border-radius: 3px 0 0 3px;
+      }
+
+      &__last {
+        padding-right: 20px !important;
+        border-radius: 0 3px 3px 0;
+      }
+      button:hover {
+        cursor: pointer;
+        color: $primary-colour !important;
+        background-color: rgb(34, 34, 34) !important;
+      }
+    }
+    &__categories-mobile {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 999px) {
+  .reviews-main {
+    &__categories {
+      display: none;
+    }
+
+    &__categories-mobile {
+      margin: 10px 0;
+
+      select {
+        @include drop-down();
+      }
+    }
+  }
+}
+
 .reviews-main {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  &__search {
+    margin-bottom: 10px;
+    form {
+      display: flex;
+      flex-direction: row;
+      input {
+        border: none;
+        height: 1.8rem;
+      }
+      button {
+        height: 1.8rem;
+        border: none;
+        font-size: 1.4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 5px;
+      }
+
+      .form-search-delete {
+        background-color: white;
+      }
+
+      .form-search-delete:hover {
+        cursor: pointer;
+        background-color: rgb(247, 247, 247);
+      }
+
+      .form-search-submit {
+        background-color: $secondary-colour;
+        color: white;
+        padding: 0 20px;
+        border-radius: 0 4px 4px 0;
+      }
+
+      .form-search-submit:hover {
+        cursor: pointer;
+        color: $primary-colour;
+      }
+    }
+  }
+
   .review-list {
     width: 100vw;
     display: flex;
@@ -11,7 +119,7 @@
       max-width: 450px;
       width: 85%;
       min-width: 300px;
-      margin-top: 20px;
+      margin-bottom: 20px;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
         0 6px 6px 0 rgba(0, 0, 0, 0.19);
       &__imagecont {
@@ -78,17 +186,10 @@
     }
   }
 
-  &__load-more-button {
-    border: none;
-    background-color: none;
-    padding: 20px;
-    margin: 15px;
-    background-color: rgb(140, 140, 230);
-    font-weight: bold;
-    color: white;
-    border-radius: 5px;
-  }
-  &__load-more-button:hover {
-    cursor: pointer;
+  &__order {
+    margin-bottom: 10px;
+    select {
+      @include drop-down();
+    }
   }
 }

@@ -17,8 +17,8 @@ const ReviewList = ({ reviewList }) => {
           owner,
         }) => {
           return (
-            <div className="review-list__container">
-              <Link key={review_id} to={`reviews/${review_id}`}>
+            <div key={review_id} className="review-list__container">
+              <Link to={`reviews/${review_id}`}>
                 <div className="review-list__container__imagecont">
                   <img
                     src={review_img_url}

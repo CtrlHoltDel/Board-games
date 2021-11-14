@@ -10,6 +10,7 @@ export const useReviews = () => {
   useEffect(() => {
     const fetchReviews = async () => {
       setLoading(true);
+      console.log(queries);
       const { reviews } = await getList("/reviews", queries);
       setReviewList(() => {
         return [...reviews];
@@ -20,15 +21,24 @@ export const useReviews = () => {
     fetchReviews();
   }, [queries]);
 
-  const addQuery = (key, value) => {
+  const pickCategory = (key, value) => {
     setQueries(() => {
-      if (queries[key] === value) {
-        delete queries[key];
-        return { ...queries };
-      }
+      if (queries[key] === value) return { ...queries, [key]: "" };
       return { ...queries, [key]: value };
     });
   };
 
-  return { reviewList, loading, addQuery };
+  const sortReviews = (type, direction) => {
+    setQueries((currentQueries) => {
+      return { ...currentQueries, sort_by: type, order: direction };
+    });
+  };
+
+  const search = (searchTerm) => {
+    setQueries((currentQueries) => {
+      return { ...currentQueries, search: searchTerm };
+    });
+  };
+
+  return { reviewList, loading, pickCategory, sortReviews, search };
 };

@@ -5,6 +5,7 @@ import { getList } from "../api/actions";
 const useCategories = () => {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [currCategory, setCurrCategory] = useState(null);
 
   useEffect(() => {
     const getCategories = async () => {
@@ -17,7 +18,7 @@ const useCategories = () => {
     getCategories();
   }, []);
 
-  return { categories, loading };
+  return { categories, loading, currCategory, setCurrCategory };
 };
 
 export default useCategories;

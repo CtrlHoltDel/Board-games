@@ -1,0 +1,23 @@
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.large-loading {
+  width: 100vw;
+  height: 500px;
+  @include center();
+  img {
+    height: 100px;
+    width: 100px;
+  }
+}
+
+.cat-bar {
+  height: 56px;
+  @include center();
+  img {
+    height: 50%;
+  }
+}
