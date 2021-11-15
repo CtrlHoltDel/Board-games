@@ -1,3 +1,4 @@
+import { Try } from "@mui/icons-material";
 import axios from "axios";
 
 const api = axios.create({
@@ -62,7 +63,16 @@ export const patchLikeToggle = async (reviewId, username) => {
 
 export const addItem = async (endpoint, body) => {
   try {
-    await api.post(endpoint, body);
+    const { data } = await api.post(endpoint, body);
+    return data;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const delItem = async (endpoint) => {
+  try {
+    await api.delete(endpoint);
   } catch (err) {
     console.log(err);
   }

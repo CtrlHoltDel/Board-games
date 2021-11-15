@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { getList } from "../api/actions";
+import { addItem, getList } from "../api/actions";
 
 const useComments = (endpoint) => {
   const [comments, setComments] = useState([]);
   const [commentsLoading, setCommentsLoading] = useState(true);
+  const [postUploading, setPostUploading] = useState(false);
 
   useEffect(() => {
     const fetchComments = async () => {
@@ -16,13 +17,22 @@ const useComments = (endpoint) => {
     fetchComments();
   }, [endpoint]);
 
-  const addComment = (newComment) => {
-    setComments(() => {
-      return [newComment, ...comments];
+  const addComment = async ({ username, body, reviewId }) => {
+    setPostUploading(true);
+    const { comment } = await addItem(`/reviews/${reviewId}/comments`, {
+      username,
+      body,
+      reviewId,
     });
+
+    setComments((currComments) => {
+      return [comment, ...currComments];
+    });
+
+    setPostUploading(false);
   };
 
-  return { comments, commentsLoading, addComment };
+  return { comments, commentsLoading, addComment, postUploading };
 };
 
 export default useComments;

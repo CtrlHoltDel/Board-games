@@ -8,8 +8,8 @@ import Loading from "../reusable/Loading";
 import "../../styles/review/review.css";
 import SingleReview from "./SingleReview";
 import useComments from "../../hooks/useComments";
-import CommentsList from "../reusable/CommentsList";
-import SubmitComment from "../reusable/SubmitComment";
+import CommentsList from "./CommentsList";
+import SubmitComment from "./SubmitComment";
 
 const Review = (props) => {
   const {
@@ -22,7 +22,7 @@ const Review = (props) => {
     reviewId,
     username
   );
-  const { comments, commentsLoading, addComment } = useComments(
+  const { comments, commentsLoading, addComment, postUploading } = useComments(
     `/reviews/${reviewId}/comments`
   );
 
@@ -43,8 +43,9 @@ const Review = (props) => {
         addComment={addComment}
         username={username}
         reviewId={reviewId}
+        postUploading={postUploading}
       />
-      <CommentsList comments={comments} />
+      <CommentsList comments={comments} username={username} />
     </div>
   );
 };

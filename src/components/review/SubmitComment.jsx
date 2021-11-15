@@ -2,26 +2,24 @@ import { TextField } from "@mui/material";
 import { useState } from "react";
 import { addItem } from "../../api/actions";
 
-const SubmitComment = ({ addComment, username, reviewId }) => {
-  const [comment, setComment] = useState("");
+const SubmitComment = ({ addComment, username, reviewId, postUploading }) => {
+  const [body, setBody] = useState("");
   const [error, setError] = useState(false);
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (!comment.length) {
+    if (!body.length) {
       setError(true);
       return;
     }
 
     addComment({
-      author: username,
-      created_at: Date.now(),
-      body: comment,
+      username,
+      body,
+      reviewId,
     });
 
-    addItem(`/reviews/${reviewId}/comments`, { username, body: comment });
-
-    setComment("");
+    setBody("");
   };
 
   return (
@@ -29,17 +27,20 @@ const SubmitComment = ({ addComment, username, reviewId }) => {
       <form onSubmit={onSubmit} className="comment-input__form">
         <TextField
           className="comment-input__form__input"
-          label="Add a comment"
+          label="Add your own comment"
           variant="filled"
           multiline={true}
           error={error}
-          value={comment}
+          value={body}
+          disabled={postUploading}
           onChange={(e) => {
-            setComment(e.target.value);
+            setBody(e.target.value);
             setError(false);
           }}
         />
-        <button className="comment-input__form__submit">Submit Comment</button>
+        <button className="comment-input__form__submit">
+          {postUploading ? "Uploading.." : "Submit Comment"}
+        </button>
       </form>
     </div>
   );

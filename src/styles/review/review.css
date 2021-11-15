@@ -69,6 +69,7 @@
 
 .review-page__contents {
   width: 100%;
+  margin-top: 20px;
   max-width: 500px;
   padding: 10px;
 }
@@ -83,6 +84,7 @@
 }
 
 .review-page__contents__title__date {
+  margin-top: 4px;
   font-size: 0.8rem;
   color: #333333;
 }
@@ -121,6 +123,7 @@
 
 .review-page__contents__body {
   margin-top: 20px;
+  line-height: 1.4;
 }
 
 .review-comments-header {
@@ -140,7 +143,7 @@
 }
 
 .comments-container {
-  padding: 10px;
+  padding: 0 10px 10px 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -175,6 +178,64 @@
 
 .comments-container__comment__body {
   padding: 5px;
+}
+
+.comments-container__comment__delete {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 1.4rem;
+}
+
+.comments-container__comment__delete__icon {
+  color: #ff4040;
+}
+
+.comments-container__comment__delete__icon:hover {
+  cursor: pointer;
+}
+
+.comments-container__comment__delete__confirm {
+  font-style: italic;
+  color: #ff4040;
+  font-size: 0.8rem;
+  text-decoration: underline;
+}
+
+.comments-container__comment__delete__confirm:hover {
+  cursor: pointer;
+}
+
+.comments-container__deleted-comment {
+  max-width: 400px;
+  width: 100%;
+  margin-top: 10px;
+  opacity: 20%;
+}
+
+.comments-container__deleted-comment__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 5px;
+  background-color: #dddddd;
+}
+
+.comments-container__deleted-comment__body {
+  padding: 5px;
+}
+
+.comments-container__deleted-comment__delete {
+  pointer-events: none;
 }
 
 .comment-input {
@@ -219,7 +280,7 @@
 
 .comment-input__form__submit {
   width: 80%;
-  margin-top: 10px;
+  margin-top: 20px;
   padding: 10px;
   border: none;
   color: white;

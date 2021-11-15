@@ -50,9 +50,9 @@
 
   &__contents {
     width: 100%;
+    margin-top: 20px;
     max-width: 500px;
     padding: 10px;
-    // background-color: gray;
     &__title {
       position: relative;
       &__title {
@@ -60,6 +60,7 @@
         font-weight: bold;
       }
       &__date {
+        margin-top: 4px;
         font-size: 0.8rem;
         color: rgb(51, 51, 51);
       }
@@ -92,6 +93,7 @@
 
     &__body {
       margin-top: 20px;
+      line-height: 1.4;
     }
   }
 }
@@ -107,7 +109,7 @@
 }
 
 .comments-container {
-  padding: 10px;
+  padding: 0 10px 10px 10px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -126,6 +128,52 @@
 
     &__body {
       padding: 5px;
+    }
+
+    &__delete {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 1.4rem;
+
+      &__icon {
+        color: rgb(255, 64, 64);
+      }
+
+      &__icon:hover {
+        cursor: pointer;
+      }
+
+      &__confirm {
+        font-style: italic;
+        color: rgb(255, 64, 64);
+        font-size: 0.8rem;
+        text-decoration: underline;
+      }
+
+      &__confirm:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  &__deleted-comment {
+    max-width: 400px;
+    width: 100%;
+    margin-top: 10px;
+    opacity: 20%;
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px;
+      background-color: rgb(221, 221, 221);
+    }
+
+    &__body {
+      padding: 5px;
+    }
+
+    &__delete {
+      pointer-events: none;
     }
   }
 }
@@ -152,7 +200,7 @@
 
     &__submit {
       width: 80%;
-      margin-top: 10px;
+      margin-top: 20px;
       padding: 10px;
       border: none;
       color: white;
