@@ -16,7 +16,13 @@ const useComments = (endpoint) => {
     fetchComments();
   }, [endpoint]);
 
-  return { comments, commentsLoading };
+  const addComment = (newComment) => {
+    setComments(() => {
+      return [newComment, ...comments];
+    });
+  };
+
+  return { comments, commentsLoading, addComment };
 };
 
 export default useComments;

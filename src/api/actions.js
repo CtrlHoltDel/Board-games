@@ -52,10 +52,17 @@ export const checkLike = async (reviewId, username) => {
 
 export const patchLikeToggle = async (reviewId, username) => {
   try {
-    console.log(reviewId, username);
     await api.patch(`/reviews/${reviewId}/likes`, {
       username,
     });
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const addItem = async (endpoint, body) => {
+  try {
+    await api.post(endpoint, body);
   } catch (err) {
     console.log(err);
   }

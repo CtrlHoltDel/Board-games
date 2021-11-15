@@ -6,6 +6,13 @@ import { patchLikeToggle } from "../../api/actions";
 import { useState } from "react";
 
 const SingleReview = ({ review, props, liked, toggleLike, username }) => {
+  const [updateLikeCount, setUpdateLikeCount] = useState(0);
+  const [initialLike, setInitialLike] = useState(liked);
+
+  const toggleOptimistic = (amount) => {
+    setUpdateLikeCount(updateLikeCount + amount);
+  };
+
   const {
     review_img_url,
     title,
@@ -16,13 +23,6 @@ const SingleReview = ({ review, props, liked, toggleLike, username }) => {
     likes,
     review_id,
   } = review;
-
-  const [updateLikeCount, setUpdateLikeCount] = useState(0);
-  const [initialLike, setInitialLike] = useState(liked);
-
-  const toggleOptimistic = (amount) => {
-    setUpdateLikeCount(updateLikeCount + amount);
-  };
 
   const { distance, formattedDate } = formatDate(created_at);
 

@@ -9,6 +9,7 @@ const PagePicker = ({ pagesAmount, pagePicker }) => {
     for (let i = 1; i <= pagesAmount; i++) {
       pageNumbers.push(
         <button
+          key={i}
           style={{ textDecoration: currentPage === i && "underline" }}
           onClick={() => {
             if (!(currentPage === i)) {

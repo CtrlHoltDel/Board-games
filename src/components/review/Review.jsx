@@ -9,17 +9,20 @@ import "../../styles/review/review.css";
 import SingleReview from "./SingleReview";
 import useComments from "../../hooks/useComments";
 import CommentsList from "../reusable/CommentsList";
+import SubmitComment from "../reusable/SubmitComment";
 
 const Review = (props) => {
-  const { user } = useContext(UserContext);
+  const {
+    user: { username },
+  } = useContext(UserContext);
 
   const { reviewId } = useParams();
   const { item, liked, loading, toggleLike } = useReview(
     "reviews",
     reviewId,
-    user.username
+    username
   );
-  const { comments, commentsLoading } = useComments(
+  const { comments, commentsLoading, addComment } = useComments(
     `/reviews/${reviewId}/comments`
   );
 
@@ -27,17 +30,22 @@ const Review = (props) => {
     return <Loading class_name={"large-loading"} />;
 
   return (
-    <>
+    <div>
       <SingleReview
         props={props}
         review={item}
         liked={liked}
         toggleLike={toggleLike}
-        username={user.username}
+        username={username}
       />
       <div className="review-comments-header">Comments</div>
+      <SubmitComment
+        addComment={addComment}
+        username={username}
+        reviewId={reviewId}
+      />
       <CommentsList comments={comments} />
-    </>
+    </div>
   );
 };
 

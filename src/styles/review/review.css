@@ -89,7 +89,7 @@
 
 .review-page__contents__title__owner {
   font-size: 0.8rem;
-  width: auto;
+  display: inline;
 }
 
 .review-page__contents__title__like {
@@ -137,5 +137,93 @@
   font-size: 1.2rem;
   font-weight: bold;
   margin: 10px 0;
+}
+
+.comments-container {
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.comments-container__comment {
+  max-width: 400px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.comments-container__comment__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 5px;
+  background-color: #dddddd;
+}
+
+.comments-container__comment__body {
+  padding: 5px;
+}
+
+.comment-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.comment-input__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  max-width: 350px;
+  padding: 10px;
+}
+
+.comment-input__form__input {
+  width: 100%;
+}
+
+.comment-input__form__submit {
+  width: 80%;
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  color: white;
+  background-color: #3a3939;
+  border-radius: 2px;
 }
 /*# sourceMappingURL=review.css.map */

@@ -2,6 +2,16 @@ import { Link } from "react-router-dom";
 import { formatDate } from "../../utils/utils";
 
 const CommentsList = ({ comments }) => {
+  if (comments.length === 0) {
+    return (
+      <div className="center" style={{ marginTop: "20px" }}>
+        No comments here yet! Be the first!
+      </div>
+    );
+  }
+
+  console.log(comments);
+
   return (
     <div className="comments-container">
       {comments.map((comment) => {
@@ -10,9 +20,12 @@ const CommentsList = ({ comments }) => {
         const { distance } = formatDate(created_at);
 
         return (
-          <div className="comments-container__comment">
+          <div
+            key={`${created_at}${distance}`}
+            className="comments-container__comment"
+          >
             <div className="comments-container__comment__header">
-              <Link>
+              <Link to={`/community/${author}`}>
                 <div className="comments-container__comment__header__author">
                   {author}
                 </div>
