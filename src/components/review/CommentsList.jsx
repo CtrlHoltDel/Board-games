@@ -1,6 +1,9 @@
+import { useState } from "react";
 import SingleComment from "./SingleComment";
 
 const CommentsList = ({ comments, username }) => {
+  const [deletedComments, setDeletedComments] = useState([]);
+
   if (!comments.length) {
     return (
       <div className="center" style={{ marginTop: "20px" }}>
@@ -12,7 +15,14 @@ const CommentsList = ({ comments, username }) => {
   return (
     <div className="comments-container">
       {comments.map((comment) => {
-        return <SingleComment comment={comment} username={username} />;
+        return (
+          <SingleComment
+            comment={comment}
+            username={username}
+            deletedComments={deletedComments}
+            setDeletedComments={setDeletedComments}
+          />
+        );
       })}
     </div>
   );

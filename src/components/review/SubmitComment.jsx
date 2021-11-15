@@ -1,6 +1,5 @@
 import { TextField } from "@mui/material";
 import { useState } from "react";
-import { addItem } from "../../api/actions";
 
 const SubmitComment = ({ addComment, username, reviewId, postUploading }) => {
   const [body, setBody] = useState("");

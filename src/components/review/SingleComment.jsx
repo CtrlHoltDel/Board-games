@@ -4,11 +4,15 @@ import { RiDeleteBinLine } from "react-icons/ri";
 import { useState } from "react";
 import { delItem } from "../../api/actions";
 
-const SingleComment = ({ comment, username }) => {
+const SingleComment = ({
+  comment,
+  username,
+  deletedComments,
+  setDeletedComments,
+}) => {
   console.log(comment);
   const { body, author, created_at, comment_id } = comment;
   const [confirmDel, setConfirmDel] = useState(false);
-  const [deleted, setDeleted] = useState(false);
 
   const { distance } = formatDate(created_at);
 
@@ -23,10 +27,14 @@ const SingleComment = ({ comment, username }) => {
           <div
             className="comments-container__comment__delete__confirm"
             onClick={() => {
-              setDeleted(true);
+              setDeletedComments((currComments) => {
+                return [...currComments, comment_id];
+              });
             }}
           >
-            {deleted ? "Deleted" : "Click to confirm"}
+            {deletedComments.includes(comment_id)
+              ? "Deleted"
+              : "Click to confirm"}
           </div>
         );
       } else {
@@ -46,7 +54,7 @@ const SingleComment = ({ comment, username }) => {
     <div
       key={`${created_at}${distance}`}
       className={
-        deleted
+        deletedComments.includes(comment_id)
           ? "comments-container__deleted-comment"
           : "comments-container__comment"
       }
