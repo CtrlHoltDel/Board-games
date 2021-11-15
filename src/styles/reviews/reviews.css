@@ -43,7 +43,7 @@
     font-family: "Bungee", cursive;
   }
   .reviews-main__categories-mobile select option {
-    background-color: #866464;
+    font-weight: bold;
   }
 }
 
@@ -121,7 +121,7 @@
 }
 
 .reviews-main .review-list {
-  width: 100vw;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -241,7 +241,7 @@
 }
 
 .reviews-main__order select option {
-  background-color: #866464;
+  font-weight: bold;
 }
 
 .reviews-main__page-picker {

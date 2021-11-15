@@ -19,6 +19,7 @@
         font-weight: bold;
         object-fit: fill;
         font-family: "Bungee", cursive;
+        background-image: url("../../image/dark_geometric.png");
       }
       &__logo {
         display: none;
@@ -118,7 +119,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  max-width: 100vw;
   height: 100vh;
 
   .ls-error {

@@ -16,6 +16,7 @@ const ReviewList = ({ reviewList }) => {
           created_at,
           owner,
         }) => {
+          const { distance } = formatDate(created_at);
           return (
             <div key={review_id} className="review-list__container">
               <Link to={`reviews/${review_id}`}>
@@ -43,7 +44,7 @@ const ReviewList = ({ reviewList }) => {
                     {title}
                   </div>
                   <div className="review-list__container__info__header__date">
-                    {formatDate(created_at)}
+                    {distance}
                   </div>
                 </div>
                 <div className="review-list__container__info__header__links">

@@ -11,7 +11,6 @@ export const useReviews = () => {
   useEffect(() => {
     const fetchReviews = async () => {
       setLoading(true);
-      console.log(queries);
       const response = await getList("/reviews", queries);
       const { reviews, count } = response;
       setPagesAmount(Math.round(count / 10));

@@ -15,7 +15,11 @@ const Login = ({ setUser }) => {
   };
 
   const guestLogin = async () => {
-    setUser({ username: "guest", email: "guestUser@guest.com" });
+    setUser({ username: "GuestUser", email: "guestUser@guest.com" });
+    localStorage.setItem(
+      "storedUser",
+      JSON.stringify({ username: "GuestUser", email: "guestUser@guest.com" })
+    );
   };
 
   const onSubmit = async (input) => {

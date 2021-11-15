@@ -40,3 +40,23 @@ export const getItem = async (type, value) => {
     console.log(err);
   }
 };
+
+export const checkLike = async (reviewId, username) => {
+  try {
+    const { data } = await api.get(`/users/${username}/likes/${reviewId}`);
+    return data.liked;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const patchLikeToggle = async (reviewId, username) => {
+  try {
+    console.log(reviewId, username);
+    await api.patch(`/reviews/${reviewId}/likes`, {
+      username,
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};

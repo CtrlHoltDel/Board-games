@@ -4,13 +4,21 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
-/* @media only screen and (min-width: 700px) { */
+
 html {
   overflow: -moz-scrollbars-vertical;
   overflow-y: scroll;
+  color: rgb(20, 20, 20);
 }
-/* } */
 
 body {
-  background-color: rgb(235, 235, 235);
+  background-color: rgb(245, 245, 245);
+}
+
+.clickable-link {
+  text-decoration: underline;
+}
+
+.clickable-link:hover {
+  cursor: pointer;
 }
