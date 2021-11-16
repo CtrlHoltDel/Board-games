@@ -3,7 +3,7 @@ import { MdHowToVote } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { formatDate } from "../../utils/utils";
 
-const ReviewList = ({ reviewList, ownProfile }) => {
+const ReviewList = ({ reviewList, ownProfile, likedPage }) => {
   return (
     <div className="review-list">
       {reviewList.map(
@@ -26,16 +26,18 @@ const ReviewList = ({ reviewList, ownProfile }) => {
                     alt=""
                     className="review-list__container__imagecont__image"
                   />
-                  <div className="review-list__container__imagecont__interaction">
-                    <div className="review-list__container__imagecont__interaction__cont">
-                      <MdHowToVote className="review-list__container__imagecont__interaction__cont__icon" />
-                      {votes}
+                  {!likedPage && (
+                    <div className="review-list__container__imagecont__interaction">
+                      <div className="review-list__container__imagecont__interaction__cont">
+                        <MdHowToVote className="review-list__container__imagecont__interaction__cont__icon" />
+                        {votes}
+                      </div>
+                      <div className="review-list__container__imagecont__interaction__cont">
+                        <AiOutlineComment className="review-list__container__imagecont__interaction__cont__icon" />
+                        {comment_count}
+                      </div>
                     </div>
-                    <div className="review-list__container__imagecont__interaction__cont">
-                      <AiOutlineComment className="review-list__container__imagecont__interaction__cont__icon" />
-                      {comment_count}
-                    </div>
-                  </div>
+                  )}
                 </div>
               </Link>
               <div className="review-list__container__info">
