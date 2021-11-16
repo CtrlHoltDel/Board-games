@@ -2,49 +2,30 @@ import "../../styles/community/profile.css";
 
 import { useParams } from "react-router";
 import useUser from "../../hooks/useUser";
-import { useReviews } from "../../hooks/useReviews.js";
 import Loading from "../reusable/Loading";
 import Card from "./Card";
-import ReviewList from "../reviews/ReviewList";
 import { useState } from "react";
 import UserComments from "./UserComments";
 import LikedReviews from "./LikedReviews";
+import UserReviews from "./UserReviews";
 
 const Profile = () => {
-  const { username: paramUsername } = useParams();
+  const { username } = useParams();
 
   const [currentTab, setCurrentTab] = useState("reviews");
 
-  const { user, loading } = useUser(paramUsername);
-
-  const { reviewList, loading: reviewsLoading } = useReviews({
-    username: paramUsername,
-  });
+  const { user, loading } = useUser(username);
 
   if (loading) return <Loading class_name="large-loading" />;
   if (!user) return <div>404 no user</div>;
 
   const tabs = () => {
-    if (currentTab === "reviews") {
-      return (
-        <>
-          <h2>Reviews by {user.username}</h2>
-          {reviewsLoading ? (
-            <Loading class_name="large-loading" />
-          ) : (
-            <ReviewList reviewList={reviewList} ownProfile={true} />
-          )}
-        </>
-      );
-    }
+    if (currentTab === "reviews") return <UserReviews username={username} />;
 
-    if (currentTab === "comments") {
-      return <UserComments username={paramUsername} />;
-    }
+    if (currentTab === "comments") return <UserComments username={username} />;
 
-    if (currentTab === "liked reviews") {
-      return <LikedReviews username={paramUsername} />;
-    }
+    if (currentTab === "liked reviews")
+      return <LikedReviews username={username} />;
   };
 
   const buttons = () => {

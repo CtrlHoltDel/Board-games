@@ -4,6 +4,22 @@
   align-items: center;
   flex-direction: column;
 
+  .oldnew-toggle {
+    border: none;
+    font-family: "Bungee", cursive;
+    padding: 5px 20px;
+    background-image: url("../../image/dark_geometric.png");
+    color: white;
+    border-radius: 2px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
+
+  .oldnew-toggle:hover {
+    cursor: pointer;
+    color: orange;
+  }
+
   &__card {
     min-width: 290px;
     width: 80%;
@@ -101,6 +117,8 @@
           }
           &__links {
             font-size: 0.8rem;
+            display: flex;
+            justify-content: space-between;
           }
         }
       }
@@ -129,6 +147,39 @@
     button:hover {
       cursor: pointer;
       background-color: rgb(22, 22, 22);
+    }
+  }
+
+  &__comment {
+    min-width: 290px;
+    width: 60%;
+    max-width: 400px;
+    margin-bottom: 10px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 4px;
+
+    &__title {
+      display: block;
+      background-image: url("../../image/dark_geometric.png");
+      color: white;
+      padding: 5px 10px;
+      border-radius: 4px 4px 0 0;
+    }
+
+    &__info {
+      background-color: white;
+      border-radius: 0 0 4px 4px;
+      padding: 5px 10px;
+
+      &__date {
+        font-size: 0.8rem;
+        color: rgb(87, 87, 87);
+      }
+
+      &__body {
+        line-height: 1.4rem;
+      }
     }
   }
 }

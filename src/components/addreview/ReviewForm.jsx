@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { TextField } from "@mui/material";
+import { validateUrl } from "../../utils/utils";
 
 const ReviewForm = ({ onSubmit, categories }) => {
   const [title, setTitle] = useState("");
@@ -8,10 +9,13 @@ const ReviewForm = ({ onSubmit, categories }) => {
   const [imgUrl, setImgUrl] = useState("");
   const [titleError, setTitleError] = useState(false);
   const [bodyError, setBodyError] = useState(false);
-  const [category, setCategory] = useState(categories[0]);
+  const [imgError, setImageError] = useState(false);
 
+  const [category, setCategory] = useState(categories[0]);
   const onInitialSubmit = async (e) => {
     e.preventDefault();
+    const urlValidation = validateUrl(imgUrl, setImageError);
+
     if (!title.length) {
       setTitleError(true);
     }
@@ -19,7 +23,12 @@ const ReviewForm = ({ onSubmit, categories }) => {
       setBodyError(true);
     }
 
-    if (!title.length || !body.length) return;
+    if (urlValidation) {
+      console.log("test");
+      setImageError(true);
+    }
+
+    if (!title.length || !body.length || urlValidation) return;
 
     await onSubmit(title, body, category, designer, imgUrl);
 
@@ -71,19 +80,23 @@ const ReviewForm = ({ onSubmit, categories }) => {
         className="add-review__form__input"
         label="Image Url"
         variant="filled"
-        error={bodyError}
         value={imgUrl}
+        error={imgError}
         onChange={(e) => {
           setImgUrl(e.target.value);
         }}
       />
+      {imgError && (
+        <div style={{ fontSize: ".8rem", color: "red", marginTop: "4px" }}>
+          Must be either empty or a jpeg or png.
+        </div>
+      )}
       <div className="add-review__form__break"></div>
       <TextField
         className="add-review__form__input"
         label="Designer"
         variant="filled"
         value={designer}
-        error={bodyError}
         onChange={(e) => {
           setDesigner(e.target.value);
         }}

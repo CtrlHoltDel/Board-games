@@ -1,19 +1,29 @@
-import useReviewsProfile from "../../hooks/useUserReviews";
+import { useReviews } from "../../hooks/useReviews";
 import Loading from "../reusable/Loading";
+import PagePicker from "../reviews/PagePicker";
 import ReviewList from "../reviews/ReviewList";
 
 const LikedReviews = ({ username }) => {
-  const { reviews, loading } = useReviewsProfile(`/users/${username}/likes`);
+  const {
+    reviewList,
+    loading,
+    pagesAmount,
+    pagePicker,
+    currPage,
+    setCurrPage,
+  } = useReviews(`/users/${username}/likes`);
 
   if (loading) return <Loading class_name="large-loading" />;
 
-  console.log(reviews);
-
   return (
     <>
-      <h2>Reviews liked by {username}</h2>
-
-      <ReviewList reviewList={reviews} likedPage={true} />
+      <ReviewList reviewList={reviewList} likedPage={true} />
+      <PagePicker
+        pagesAmount={pagesAmount}
+        pagePicker={pagePicker}
+        currPage={currPage}
+        setCurrPage={setCurrPage}
+      />
     </>
   );
 };

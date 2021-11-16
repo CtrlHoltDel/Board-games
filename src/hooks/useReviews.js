@@ -1,17 +1,17 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { getList } from "../api/actions";
 
-export const useReviews = (initialQueries, p = 1) => {
+export const useReviews = (endpoint, initialQueries, p = 1) => {
   const [reviewList, setReviewList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [queries, setQueries] = useState({ ...initialQueries, p });
-  const [pagesAmount, setPagesAmount] = useState(1);
+  const [pagesAmount, setPagesAmount] = useState(0);
+  const [currPage, setCurrPage] = useState(p);
 
   useEffect(() => {
     const fetchReviews = async () => {
       setLoading(true);
-      const response = await getList("/reviews", queries);
+      const response = await getList(endpoint, queries);
       const { reviews, count } = response;
       setPagesAmount(Math.round(count / 10));
       setReviewList(() => {
@@ -21,7 +21,7 @@ export const useReviews = (initialQueries, p = 1) => {
     };
 
     fetchReviews();
-  }, [queries]);
+  }, [endpoint, queries]);
 
   const pickCategory = (key, value) => {
     setQueries(() => {
@@ -56,5 +56,7 @@ export const useReviews = (initialQueries, p = 1) => {
     search,
     pagesAmount,
     pagePicker,
+    currPage,
+    setCurrPage,
   };
 };

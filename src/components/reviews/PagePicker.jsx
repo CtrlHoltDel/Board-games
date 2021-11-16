@@ -1,8 +1,4 @@
-import { useState } from "react";
-
-const PagePicker = ({ pagesAmount, pagePicker }) => {
-  const [currentPage, setCurrentPage] = useState(1);
-
+const PagePicker = ({ pagesAmount, pagePicker, currPage, setCurrPage }) => {
   const pages = () => {
     const pageNumbers = [];
 
@@ -10,10 +6,10 @@ const PagePicker = ({ pagesAmount, pagePicker }) => {
       pageNumbers.push(
         <button
           key={i}
-          style={{ textDecoration: currentPage === i && "underline" }}
+          style={{ textDecoration: currPage === i && "underline" }}
           onClick={() => {
-            if (!(currentPage === i)) {
-              setCurrentPage(i);
+            if (!(currPage === i)) {
+              setCurrPage(i);
               pagePicker(i);
             }
           }}

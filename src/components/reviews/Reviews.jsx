@@ -18,7 +18,9 @@ const Reviews = () => {
     search,
     pagesAmount,
     pagePicker,
-  } = useReviews();
+    currPage,
+    setCurrPage,
+  } = useReviews("/reviews");
 
   const reviews = () => {
     return loading ? (
@@ -41,7 +43,12 @@ const Reviews = () => {
         <OrderDropDown sortReviews={sortReviews} />
         <SearchBar search={search} />
         {reviews()}
-        <PagePicker pagesAmount={pagesAmount} pagePicker={pagePicker} />
+        <PagePicker
+          pagesAmount={pagesAmount}
+          pagePicker={pagePicker}
+          currPage={currPage}
+          setCurrPage={setCurrPage}
+        />
       </div>
     </>
   );

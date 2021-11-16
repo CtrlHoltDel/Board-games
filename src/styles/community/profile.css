@@ -14,6 +14,22 @@
           flex-direction: column;
 }
 
+.profile-container .oldnew-toggle {
+  border: none;
+  font-family: "Bungee", cursive;
+  padding: 5px 20px;
+  background-image: url("../../image/dark_geometric.png");
+  color: white;
+  border-radius: 2px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.profile-container .oldnew-toggle:hover {
+  cursor: pointer;
+  color: orange;
+}
+
 .profile-container__card {
   min-width: 290px;
   width: 80%;
@@ -133,6 +149,12 @@
 
 .profile-container .review-list__container__info__header__links {
   font-size: 0.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .profile-container__buttons button {
@@ -156,5 +178,38 @@
 .profile-container__buttons button:hover {
   cursor: pointer;
   background-color: #161616;
+}
+
+.profile-container__comment {
+  min-width: 290px;
+  width: 60%;
+  max-width: 400px;
+  margin-bottom: 10px;
+  -webkit-box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+          box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  border-radius: 4px;
+}
+
+.profile-container__comment__title {
+  display: block;
+  background-image: url("../../image/dark_geometric.png");
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px 4px 0 0;
+}
+
+.profile-container__comment__info {
+  background-color: white;
+  border-radius: 0 0 4px 4px;
+  padding: 5px 10px;
+}
+
+.profile-container__comment__info__date {
+  font-size: 0.8rem;
+  color: #575757;
+}
+
+.profile-container__comment__info__body {
+  line-height: 1.4rem;
 }
 /*# sourceMappingURL=profile.css.map */

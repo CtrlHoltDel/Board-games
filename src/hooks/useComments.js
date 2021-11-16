@@ -1,21 +1,25 @@
 import { useEffect, useState } from "react";
 import { addItem, getList } from "../api/actions";
 
-const useComments = (endpoint) => {
+const useComments = (endpoint, p = 1) => {
   const [comments, setComments] = useState([]);
   const [commentsLoading, setCommentsLoading] = useState(true);
   const [postUploading, setPostUploading] = useState(false);
+  const [queries, setQueries] = useState({ p });
+  const [pagesAmount, setPagesAmount] = useState(0);
+  const [currPage, setCurrPage] = useState(p);
 
   useEffect(() => {
     const fetchComments = async () => {
       setCommentsLoading(true);
-      const { comments } = await getList(endpoint);
+      const { comments, count = 0 } = await getList(endpoint, queries);
       setComments(comments);
+      setPagesAmount(Math.round(count / 10) + 1);
       setCommentsLoading(false);
     };
 
     fetchComments();
-  }, [endpoint]);
+  }, [endpoint, queries]);
 
   const addComment = async ({ username, body, reviewId }) => {
     setPostUploading(true);
@@ -32,7 +36,22 @@ const useComments = (endpoint) => {
     setPostUploading(false);
   };
 
-  return { comments, commentsLoading, addComment, postUploading };
+  const pagePicker = (page) => {
+    setQueries((currQueries) => {
+      return { ...currQueries, p: page };
+    });
+  };
+
+  return {
+    comments,
+    commentsLoading,
+    addComment,
+    postUploading,
+    pagesAmount,
+    pagePicker,
+    currPage,
+    setCurrPage,
+  };
 };
 
 export default useComments;
