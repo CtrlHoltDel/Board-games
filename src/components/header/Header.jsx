@@ -2,6 +2,7 @@ import { Squash as Hamburger } from "hamburger-react";
 import { useState } from "react";
 import logo from "../../image/logowhite.png";
 import "../../styles/header/header.css";
+import { logoutStorage } from "../../utils/localStorage";
 import NavBar from "../nav/NavBar";
 import MobNav from "./MobNav";
 
@@ -11,7 +12,7 @@ const Header = ({ setUser, user: { username } }) => {
   const toggleNav = () => setMobToggle((bool) => !bool);
 
   const logout = () => {
-    setUser(null);
+    logoutStorage(setUser);
   };
 
   return (
@@ -23,7 +24,7 @@ const Header = ({ setUser, user: { username } }) => {
       <div onClick={toggleNav} className="hamburger">
         <Hamburger />
       </div>
-      {mobToggle && <MobNav />}
+      {mobToggle && <MobNav toggleNav={toggleNav} />}
       <div className="user-nav-info">
         Logged in as {username} - <button onClick={logout}>Logout</button>
       </div>

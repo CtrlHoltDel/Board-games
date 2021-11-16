@@ -163,9 +163,12 @@
   max-width: 400px;
   width: 100%;
   margin-top: 10px;
+  -webkit-box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+          box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
 .comments-container__comment__header {
+  border-radius: 3px 3px 0 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -173,14 +176,23 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 5px;
-  background-color: #dddddd;
+  background-color: #f0f0f0;
+}
+
+.comments-container__comment__header__date {
+  font-size: 0.8rem;
+}
+
+.comments-container__comment__header__author {
+  color: black;
 }
 
 .comments-container__comment__body {
   padding: 5px;
+  background-color: #f7f7f7;
 }
 
-.comments-container__comment__delete {
+.comments-container__comment__controls {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -193,22 +205,34 @@
   height: 1.4rem;
 }
 
-.comments-container__comment__delete__icon {
+.comments-container__comment__controls__icon-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: #ff4040;
+  padding: 3px 10px;
+  margin-bottom: 3px;
 }
 
-.comments-container__comment__delete__icon:hover {
+.comments-container__comment__controls__icon-button:hover {
   cursor: pointer;
+  background-color: #e6e6e6;
 }
 
-.comments-container__comment__delete__confirm {
+.comments-container__comment__controls__confirm {
   font-style: italic;
   color: #ff4040;
   font-size: 0.8rem;
   text-decoration: underline;
 }
 
-.comments-container__comment__delete__confirm:hover {
+.comments-container__comment__controls__confirm:hover {
   cursor: pointer;
 }
 
@@ -279,12 +303,17 @@
 }
 
 .comment-input__form__submit {
+  height: 40px;
   width: 80%;
   margin-top: 20px;
-  padding: 10px;
   border: none;
   color: white;
   background-color: #3a3939;
   border-radius: 2px;
+}
+
+.comment-input__form__submit:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 /*# sourceMappingURL=review.css.map */

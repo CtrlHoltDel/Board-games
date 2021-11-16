@@ -27,7 +27,7 @@ const LoginForm = ({ onSubmit, loading }) => {
         <p className="ls-error">{usernameError}</p>
         <label htmlFor="lfi__password">Password</label>
         <input
-          type="text"
+          type="password"
           id="lfi__password"
           className="lfi__password"
           onChange={(e) => {

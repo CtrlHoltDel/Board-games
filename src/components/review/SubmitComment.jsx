@@ -1,5 +1,6 @@
 import { TextField } from "@mui/material";
 import { useState } from "react";
+import loadingIcon from "../../image/loading.svg";
 
 const SubmitComment = ({ addComment, username, reviewId, postUploading }) => {
   const [body, setBody] = useState("");
@@ -38,7 +39,11 @@ const SubmitComment = ({ addComment, username, reviewId, postUploading }) => {
           }}
         />
         <button className="comment-input__form__submit">
-          {postUploading ? "Uploading.." : "Submit Comment"}
+          {postUploading ? (
+            <img src={loadingIcon} alt="" style={{ height: "100%" }} />
+          ) : (
+            "Submit Comment"
+          )}
         </button>
       </form>
     </div>

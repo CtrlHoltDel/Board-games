@@ -10,7 +10,9 @@ const NavBar = () => {
       <Link
         key={endpoint}
         to={`/${endpoint}`}
-        onClick={() => setCurrentPage(endpoint)}
+        onClick={() => {
+          setCurrentPage(endpoint);
+        }}
       >
         <button
           className={

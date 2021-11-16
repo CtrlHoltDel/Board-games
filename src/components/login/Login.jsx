@@ -4,22 +4,14 @@ import LoginForm from "./LoginForm";
 import "../../styles/login/login.css";
 import { logIn, SignUpSubmit } from "../../utils/login";
 import { Link } from "react-router-dom";
+import { storeAndSet } from "../../utils/localStorage";
 
 const Login = ({ setUser }) => {
   const [logSignToggle, setLogSignToggle] = useState(true);
   const [loading, setLoading] = useState(false);
 
-  const storeUser = (user) => {
-    setUser(user);
-    localStorage.setItem("storedUser", JSON.stringify(user));
-  };
-
   const guestLogin = async () => {
-    setUser({ username: "GuestUser", email: "guestUser@guest.com" });
-    localStorage.setItem(
-      "storedUser",
-      JSON.stringify({ username: "GuestUser", email: "guestUser@guest.com" })
-    );
+    storeAndSet(setUser, "GuestUser", "guestUser@guest.com");
   };
 
   const onSubmit = async (input) => {
@@ -28,11 +20,11 @@ const Login = ({ setUser }) => {
     setLoading(true);
     if (logSignToggle) {
       const result = await SignUpSubmit(input);
-      if (result) storeUser({ username, email });
+      if (result) storeAndSet(setUser, username, email);
       setLoading(false);
     } else {
       const result = await logIn(input);
-      if (result) storeUser({ username, email });
+      if (result) storeAndSet(setUser, username, email);
       setLoading(false);
     }
   };

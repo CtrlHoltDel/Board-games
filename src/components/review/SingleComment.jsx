@@ -10,7 +10,6 @@ const SingleComment = ({
   deletedComments,
   setDeletedComments,
 }) => {
-  console.log(comment);
   const { body, author, created_at, comment_id } = comment;
   const [confirmDel, setConfirmDel] = useState(false);
 
@@ -21,38 +20,40 @@ const SingleComment = ({
   };
 
   const deleteButton = () => {
-    if (username === author) {
-      if (confirmDel) {
-        return (
-          <div
-            className="comments-container__comment__delete__confirm"
-            onClick={() => {
-              setDeletedComments((currComments) => {
-                return [...currComments, comment_id];
-              });
-            }}
-          >
-            {deletedComments.includes(comment_id)
-              ? "Deleted"
-              : "Click to confirm"}
-          </div>
-        );
-      } else {
-        return (
+    if (confirmDel) {
+      return (
+        <div
+          className="comments-container__comment__controls__confirm"
+          onClick={() => {
+            setDeletedComments((currComments) => {
+              return [...currComments, comment_id];
+            });
+          }}
+        >
+          {deletedComments.includes(comment_id)
+            ? "Deleted"
+            : "Click to confirm"}
+        </div>
+      );
+    } else {
+      return (
+        <div
+          className="comments-container__comment__controls__icon-button"
+          onClick={() => {
+            setConfirmDel(true);
+            onDelete();
+          }}
+        >
           <RiDeleteBinLine
-            className="comments-container__comment__delete__icon"
-            onClick={() => {
-              setConfirmDel(true);
-              onDelete();
-            }}
+          // className="comments-container__comment__controls__icon"
           />
-        );
-      }
+        </div>
+      );
     }
   };
+
   return (
     <div
-      key={`${created_at}${distance}`}
       className={
         deletedComments.includes(comment_id)
           ? "comments-container__deleted-comment"
@@ -70,9 +71,11 @@ const SingleComment = ({
         </div>
       </div>
       <div className="comments-container__comment__body">{body}</div>
-      <div className="comments-container__comment__delete">
-        {deleteButton()}
-      </div>
+      {username === author && (
+        <div className="comments-container__comment__controls">
+          {deleteButton()}
+        </div>
+      )}
     </div>
   );
 };

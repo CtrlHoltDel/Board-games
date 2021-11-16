@@ -1,0 +1,63 @@
+$primary-colour: #ffae18;
+$secondary-colour: #313131;
+
+.add-review {
+  width: 100%;
+  margin-top: 20px;
+
+  &__form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    &__dropdown {
+      width: 230px;
+      background-color: $secondary-colour;
+      border: none;
+      border-radius: 2px;
+      color: white;
+      padding: 5px 0;
+      text-align: center;
+      font-family: "Bungee", cursive;
+      margin-bottom: 5px;
+      option {
+        font-weight: bold;
+      }
+    }
+
+    &__break {
+      height: 5px;
+    }
+
+    &__input {
+      width: 80%;
+      max-width: 400px;
+      min-width: 256px;
+    }
+
+    &__submit {
+      margin-top: 10px;
+      width: 230px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      background-color: $secondary-colour;
+      color: white;
+      padding: 10px;
+      border-radius: 3px;
+      font-family: "Bungee", cursive;
+    }
+  }
+}
+
+.add-review-uploading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: orange;
+  font-weight: bold;
+  margin-top: 100px;
+}

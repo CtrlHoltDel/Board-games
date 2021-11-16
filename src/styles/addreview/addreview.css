@@ -1,0 +1,86 @@
+.add-review {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.add-review__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.add-review__form__dropdown {
+  width: 230px;
+  background-color: #313131;
+  border: none;
+  border-radius: 2px;
+  color: white;
+  padding: 5px 0;
+  text-align: center;
+  font-family: "Bungee", cursive;
+  margin-bottom: 5px;
+}
+
+.add-review__form__dropdown option {
+  font-weight: bold;
+}
+
+.add-review__form__break {
+  height: 5px;
+}
+
+.add-review__form__input {
+  width: 80%;
+  max-width: 400px;
+  min-width: 256px;
+}
+
+.add-review__form__submit {
+  margin-top: 10px;
+  width: 230px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: none;
+  background-color: #313131;
+  color: white;
+  padding: 10px;
+  border-radius: 3px;
+  font-family: "Bungee", cursive;
+}
+
+.add-review-uploading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: orange;
+  font-weight: bold;
+  margin-top: 100px;
+}
+/*# sourceMappingURL=addreview.css.map */

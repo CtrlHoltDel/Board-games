@@ -46,7 +46,7 @@ const SignUp = ({ onSubmit, loading }) => {
         <p className="ls-error">{emailError}</p>
         <label htmlFor="sfi__password">Password</label>
         <input
-          type="text"
+          type="password"
           id="sfi__password"
           className="sfi__password"
           onChange={(e) => {

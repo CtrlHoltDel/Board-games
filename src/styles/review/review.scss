@@ -119,29 +119,48 @@
     max-width: 400px;
     width: 100%;
     margin-top: 10px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+
     &__header {
+      border-radius: 3px 3px 0 0;
       display: flex;
       justify-content: space-between;
       padding: 5px;
-      background-color: rgb(221, 221, 221);
+      background-color: rgb(240, 240, 240);
+
+      &__date {
+        font-size: 0.8rem;
+      }
+
+      &__author {
+        color: black;
+      }
     }
 
     &__body {
       padding: 5px;
+      background-color: rgb(247, 247, 247);
     }
 
-    &__delete {
+    &__controls {
       display: flex;
       justify-content: center;
       align-items: center;
       height: 1.4rem;
 
-      &__icon {
+      &__icon-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         color: rgb(255, 64, 64);
+        padding: 3px 10px;
+        margin-bottom: 3px;
       }
 
-      &__icon:hover {
+      &__icon-button:hover {
         cursor: pointer;
+        background-color: rgb(230, 230, 230);
       }
 
       &__confirm {
@@ -199,13 +218,19 @@
     }
 
     &__submit {
+      height: 40px;
       width: 80%;
       margin-top: 20px;
-      padding: 10px;
+
       border: none;
       color: white;
       background-color: rgb(58, 57, 57);
       border-radius: 2px;
+    }
+
+    &__submit:hover {
+      text-decoration: underline;
+      cursor: pointer;
     }
   }
 }

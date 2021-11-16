@@ -1,9 +1,9 @@
-import NavBar from '../nav/NavBar';
+import NavBar from "../nav/NavBar";
 
-const MobNav = () => {
+const MobNav = ({ toggleNav }) => {
   return (
     <div className="mob-nav">
-      <NavBar />
+      <NavBar toggleNav={toggleNav} />
     </div>
   );
 };

@@ -6,7 +6,10 @@ const CommentsList = ({ comments, username }) => {
 
   if (!comments.length) {
     return (
-      <div className="center" style={{ marginTop: "20px" }}>
+      <div
+        className="center"
+        style={{ marginTop: "20px", marginBottom: "20px" }}
+      >
         No comments here yet! Be the first!
       </div>
     );
@@ -17,6 +20,7 @@ const CommentsList = ({ comments, username }) => {
       {comments.map((comment) => {
         return (
           <SingleComment
+            key={comment.comment_id}
             comment={comment}
             username={username}
             deletedComments={deletedComments}
