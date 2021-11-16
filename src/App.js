@@ -8,6 +8,7 @@ import "./styles/reusable/reusable.css";
 import Review from "./components/review/Review";
 import AddReview from "./components/addreview/AddReview";
 import Profile from "./components/user/Profile";
+import Community from "./components/community/Community";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -29,6 +30,7 @@ function App() {
           <Route exact path="/add_review">
             {(props) => <AddReview user={user} />}
           </Route>
+          <Route exact path="/community" component={Community} />
           <Route exact path="/community/:username" component={Profile} />
         </Switch>
       </div>

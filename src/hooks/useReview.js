@@ -10,10 +10,17 @@ const useReview = (endpoint, value, user) => {
   useEffect(() => {
     const getReview = async () => {
       setLoading(true);
-      const { review } = await getItem(endpoint, value);
-      const bool = await checkLike(review.review_id, user);
+      const res = await getItem(endpoint, value);
+
+      if (!res) {
+        console.log("test");
+        setItem(null);
+        return;
+      }
+
+      const bool = await checkLike(res.review.review_id, user);
       setLiked(bool);
-      setItem(review);
+      setItem(res.review);
       setLoading(false);
     };
 

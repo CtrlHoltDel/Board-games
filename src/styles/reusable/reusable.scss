@@ -33,3 +33,21 @@
     }
   }
 }
+
+.not-found {
+  width: 100vw;
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &__404 {
+    font-size: 5rem;
+  }
+
+  &__nf {
+    margin-top: 10px;
+    font-size: 1.2rem;
+  }
+}

@@ -43,9 +43,9 @@ const SingleReview = ({ review, props, liked, toggleLike, username }) => {
         />
       </div>
       <div className="review-page__path-info">
-        <span className="clickable-link" onClick={() => props.history.goBack()}>
+        <Link style={{ color: "white" }} to="/reviews">
           Reviews
-        </span>
+        </Link>
         {">"} {category} {">"} {title}
       </div>
       <div className="review-page__contents">

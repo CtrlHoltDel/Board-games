@@ -191,7 +191,7 @@
 }
 
 .reviews-main .review-list__container__imagecont:hover {
-  opacity: 85%;
+  cursor: pointer;
 }
 
 .reviews-main .review-list__container__info {

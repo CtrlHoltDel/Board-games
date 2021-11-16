@@ -8,6 +8,7 @@ import { useState } from "react";
 import UserComments from "./UserComments";
 import LikedReviews from "./LikedReviews";
 import UserReviews from "./UserReviews";
+import NotFound from "../reusable/NotFound";
 
 const Profile = () => {
   const { username } = useParams();
@@ -17,7 +18,7 @@ const Profile = () => {
   const { user, loading } = useUser(username);
 
   if (loading) return <Loading class_name="large-loading" />;
-  if (!user) return <div>404 no user</div>;
+  if (!user) return <NotFound />;
 
   const tabs = () => {
     if (currentTab === "reviews") return <UserReviews username={username} />;

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import useComments from "../../hooks/useComments";
 import { formatDate } from "../../utils/utils";
 import Loading from "../reusable/Loading";
-import PagePicker from "../reviews/PagePicker";
+import PagePicker from "../reusable/PagePicker";
 
 const UserComments = ({ username }) => {
   const {
@@ -17,6 +17,7 @@ const UserComments = ({ username }) => {
   console.log(pagesAmount);
 
   if (commentsLoading) return <Loading class_name="large-loading" />;
+  if (!comments.length) return <div>No comments by this user</div>;
 
   return (
     <>

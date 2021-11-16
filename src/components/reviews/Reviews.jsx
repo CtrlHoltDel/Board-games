@@ -1,13 +1,13 @@
 import "../../styles/reviews/reviews.css";
 
-import ReviewList from "./ReviewList";
+import ReviewList from "../reusable/ReviewList";
 
 import { useReviews } from "../../hooks/useReviews";
 import CategoryPicker from "./CategoryPicker";
 import OrderDropDown from "./OrderDropDown";
 import SearchBar from "./SearchBar";
 import Loading from "../reusable/Loading";
-import PagePicker from "./PagePicker";
+import PagePicker from "../reusable/PagePicker";
 
 const Reviews = () => {
   const {

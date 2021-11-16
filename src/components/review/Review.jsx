@@ -4,6 +4,7 @@ import { UserContext } from "../../context/user";
 
 import useReview from "../../hooks/useReview";
 import Loading from "../reusable/Loading";
+import NotFound from "../reusable/NotFound";
 
 import "../../styles/review/review.css";
 import SingleReview from "./SingleReview";
@@ -22,6 +23,7 @@ const Review = (props) => {
     reviewId,
     username
   );
+
   const { comments, commentsLoading, addComment, postUploading } = useComments(
     `/reviews/${reviewId}/comments`
   );

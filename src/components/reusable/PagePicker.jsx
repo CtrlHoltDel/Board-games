@@ -22,6 +22,8 @@ const PagePicker = ({ pagesAmount, pagePicker, currPage, setCurrPage }) => {
     return pageNumbers;
   };
 
+  if (pagesAmount < 1) return <div></div>;
+
   return (
     <div className="reviews-main__page-picker">
       {pagesAmount > 1 && pages()}

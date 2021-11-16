@@ -127,13 +127,18 @@
       justify-content: space-between;
       padding: 5px;
       background-color: rgb(240, 240, 240);
+      background-image: url("../../image/dark_geometric.png");
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
       &__date {
         font-size: 0.8rem;
       }
 
       &__author {
-        color: black;
+        color: white;
       }
     }
 
@@ -175,24 +180,7 @@
     }
   }
   &__deleted-comment {
-    max-width: 400px;
-    width: 100%;
-    margin-top: 10px;
-    opacity: 20%;
-    &__header {
-      display: flex;
-      justify-content: space-between;
-      padding: 5px;
-      background-color: rgb(221, 221, 221);
-    }
-
-    &__body {
-      padding: 5px;
-    }
-
-    &__delete {
-      pointer-events: none;
-    }
+    display: none;
   }
 }
 
@@ -211,6 +199,10 @@
     width: 100%;
     max-width: 350px;
     padding: 10px;
+
+    div {
+      height: 100px;
+    }
     &__input {
       width: 100%;
     }

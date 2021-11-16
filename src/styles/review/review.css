@@ -177,6 +177,13 @@
           justify-content: space-between;
   padding: 5px;
   background-color: #f0f0f0;
+  background-image: url("../../image/dark_geometric.png");
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .comments-container__comment__header__date {
@@ -184,7 +191,7 @@
 }
 
 .comments-container__comment__header__author {
-  color: black;
+  color: white;
 }
 
 .comments-container__comment__body {
@@ -237,29 +244,7 @@
 }
 
 .comments-container__deleted-comment {
-  max-width: 400px;
-  width: 100%;
-  margin-top: 10px;
-  opacity: 20%;
-}
-
-.comments-container__deleted-comment__header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 5px;
-  background-color: #dddddd;
-}
-
-.comments-container__deleted-comment__body {
-  padding: 5px;
-}
-
-.comments-container__deleted-comment__delete {
-  pointer-events: none;
+  display: none;
 }
 
 .comment-input {
@@ -296,6 +281,10 @@
   width: 100%;
   max-width: 350px;
   padding: 10px;
+}
+
+.comment-input__form div {
+  height: 100px;
 }
 
 .comment-input__form__input {

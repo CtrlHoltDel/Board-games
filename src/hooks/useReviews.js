@@ -7,6 +7,7 @@ export const useReviews = (endpoint, initialQueries, p = 1) => {
   const [queries, setQueries] = useState({ ...initialQueries, p });
   const [pagesAmount, setPagesAmount] = useState(0);
   const [currPage, setCurrPage] = useState(p);
+  const [reviewAmount, setReviewAmount] = useState(0);
 
   useEffect(() => {
     const fetchReviews = async () => {
@@ -17,6 +18,7 @@ export const useReviews = (endpoint, initialQueries, p = 1) => {
       setReviewList(() => {
         return [...reviews];
       });
+      setReviewAmount(count);
       setLoading(false);
     };
 
@@ -58,5 +60,6 @@ export const useReviews = (endpoint, initialQueries, p = 1) => {
     pagePicker,
     currPage,
     setCurrPage,
+    reviewAmount,
   };
 };

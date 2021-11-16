@@ -1,0 +1,76 @@
+.community-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .rg-info-card {
+    min-width: 250px;
+    width: 90%;
+    max-width: 280px;
+    margin-top: 15px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    text-align: center;
+    &__header {
+      background-image: url("../../image/dark_geometric.png");
+      color: white;
+      font-family: "Bungee", cursive;
+      padding: 5px;
+      border-radius: 2px 2px 0 0;
+    }
+
+    &__info {
+      padding: 5px;
+      padding-top: 10px;
+    }
+
+    &__latest {
+      padding: 15px;
+      &__header {
+        font-family: "Bungee", cursive;
+      }
+      &__info {
+        color: rgb(68, 68, 68);
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  .users-container {
+    min-width: 250px;
+    width: 80%;
+    max-width: 250px;
+    &__card {
+      margin-top: 10px;
+      align-items: center;
+      display: flex;
+      height: 2rem;
+      background-image: url("../../image/dark_geometric.png");
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+
+      border-radius: 5px;
+      img {
+        width: 50%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 5px 0 0 5px;
+      }
+      div {
+        padding-left: 5px;
+        color: white;
+      }
+    }
+
+    &__card:hover {
+      div {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .reviews-main__page-picker {
+    margin-top: 10px;
+  }
+}

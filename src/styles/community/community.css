@@ -1,0 +1,94 @@
+.community-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.community-container .rg-info-card {
+  min-width: 250px;
+  width: 90%;
+  max-width: 280px;
+  margin-top: 15px;
+  -webkit-box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+          box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  text-align: center;
+}
+
+.community-container .rg-info-card__header {
+  background-image: url("../../image/dark_geometric.png");
+  color: white;
+  font-family: "Bungee", cursive;
+  padding: 5px;
+  border-radius: 2px 2px 0 0;
+}
+
+.community-container .rg-info-card__info {
+  padding: 5px;
+  padding-top: 10px;
+}
+
+.community-container .rg-info-card__latest {
+  padding: 15px;
+}
+
+.community-container .rg-info-card__latest__header {
+  font-family: "Bungee", cursive;
+}
+
+.community-container .rg-info-card__latest__info {
+  color: #444444;
+  font-size: 0.8rem;
+}
+
+.community-container .users-container {
+  min-width: 250px;
+  width: 80%;
+  max-width: 250px;
+}
+
+.community-container .users-container__card {
+  margin-top: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 2rem;
+  background-image: url("../../image/dark_geometric.png");
+  -webkit-box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+          box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  border-radius: 5px;
+}
+
+.community-container .users-container__card img {
+  width: 50%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px 0 0 5px;
+}
+
+.community-container .users-container__card div {
+  padding-left: 5px;
+  color: white;
+}
+
+.community-container .users-container__card:hover div {
+  text-decoration: underline;
+}
+
+.community-container .reviews-main__page-picker {
+  margin-top: 10px;
+}
+/*# sourceMappingURL=community.css.map */

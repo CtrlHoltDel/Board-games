@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useReviews } from "../../hooks/useReviews";
 import Loading from "../reusable/Loading";
-import PagePicker from "../reviews/PagePicker";
-import ReviewList from "../reviews/ReviewList";
+import PagePicker from "../reusable/PagePicker";
+import ReviewList from "../reusable/ReviewList";
 
 const UserReviews = ({ username }) => {
   const [currDirection, setCurrDirection] = useState(true);
@@ -20,6 +20,7 @@ const UserReviews = ({ username }) => {
   });
 
   if (loading) return <Loading class_name="large-loading" />;
+  if (!reviewList.length) return <div>No reviews by this user</div>;
 
   return (
     <>
