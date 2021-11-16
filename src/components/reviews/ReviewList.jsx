@@ -3,7 +3,7 @@ import { MdHowToVote } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { formatDate } from "../../utils/utils";
 
-const ReviewList = ({ reviewList }) => {
+const ReviewList = ({ reviewList, ownProfile }) => {
   return (
     <div className="review-list">
       {reviewList.map(
@@ -19,7 +19,7 @@ const ReviewList = ({ reviewList }) => {
           const { distance } = formatDate(created_at);
           return (
             <div key={review_id} className="review-list__container">
-              <Link to={`reviews/${review_id}`}>
+              <Link to={`/reviews/${review_id}`}>
                 <div className="review-list__container__imagecont">
                   <img
                     src={review_img_url}
@@ -51,18 +51,20 @@ const ReviewList = ({ reviewList }) => {
                   <div>
                     <Link
                       style={{ color: "#5252ff" }}
-                      to={`reviews/${review_id}`}
+                      to={`/reviews/${review_id}`}
                     >
                       Read more
                     </Link>
                   </div>
                   <div>
-                    <Link
-                      style={{ color: "#5252ff" }}
-                      to={`community/${owner}`}
-                    >
-                      {owner}
-                    </Link>
+                    {!ownProfile && (
+                      <Link
+                        style={{ color: "#5252ff" }}
+                        to={`community/${owner}`}
+                      >
+                        {owner}
+                      </Link>
+                    )}
                   </div>
                 </div>
               </div>

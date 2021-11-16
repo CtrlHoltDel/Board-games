@@ -19,12 +19,12 @@ const Header = ({ setUser, user: { username } }) => {
     <header>
       <div className="logonav">
         <img src={logo} alt="" />
-        <NavBar />
+        <NavBar username={username} />
       </div>
       <div onClick={toggleNav} className="hamburger">
         <Hamburger />
       </div>
-      {mobToggle && <MobNav toggleNav={toggleNav} />}
+      {mobToggle && <MobNav toggleNav={toggleNav} username={username} />}
       <div className="user-nav-info">
         Logged in as {username} - <button onClick={logout}>Logout</button>
       </div>

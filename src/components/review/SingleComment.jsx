@@ -25,6 +25,7 @@ const SingleComment = ({
         <div
           className="comments-container__comment__controls__confirm"
           onClick={() => {
+            onDelete();
             setDeletedComments((currComments) => {
               return [...currComments, comment_id];
             });
@@ -41,7 +42,6 @@ const SingleComment = ({
           className="comments-container__comment__controls__icon-button"
           onClick={() => {
             setConfirmDel(true);
-            onDelete();
           }}
         >
           <RiDeleteBinLine

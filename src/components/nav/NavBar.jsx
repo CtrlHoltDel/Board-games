@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/animations/button.css";
 
-const NavBar = () => {
+const NavBar = ({ username }) => {
   const [currentPage, setCurrentPage] = useState("reviews");
 
   const navLink = (endpoint, buttonText) => {
@@ -28,7 +28,7 @@ const NavBar = () => {
   const buttons = [
     ["reviews", "Reviews"],
     ["community", "Community"],
-    ["profile", "Profile"],
+    [`community/${username}`, "Profile"],
     ["add_review", "Add Review"],
   ];
 

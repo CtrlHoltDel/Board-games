@@ -1,9 +1,9 @@
 import NavBar from "../nav/NavBar";
 
-const MobNav = ({ toggleNav }) => {
+const MobNav = ({ toggleNav, username }) => {
   return (
     <div className="mob-nav">
-      <NavBar toggleNav={toggleNav} />
+      <NavBar toggleNav={toggleNav} username={username} />
     </div>
   );
 };

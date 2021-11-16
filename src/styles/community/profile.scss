@@ -1,0 +1,134 @@
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &__card {
+    min-width: 290px;
+    width: 80%;
+    max-width: 400px;
+    margin-top: 15px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 5px;
+    &__header {
+      display: flex;
+      align-items: center;
+      background-color: white;
+      padding: 10px 15px;
+      border-radius: 5px 5px 0 0;
+      color: rgb(255, 255, 255);
+      background-image: url("../../image/dark_geometric.png");
+      &__img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: solid rgb(248, 248, 248) 2px;
+        margin-right: 15px;
+        object-fit: cover;
+      }
+
+      &__info {
+        &__label {
+          font-size: 0.7rem;
+          font-style: italic;
+        }
+        &__name {
+          font-weight: bold;
+        }
+      }
+    }
+
+    &__info-grid {
+      display: grid;
+      background-color: white;
+      padding: 8px;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      font-size: 0.9rem;
+      border-radius: 0 0 5px 5px;
+
+      &__title {
+        text-align: right;
+      }
+
+      &__number {
+        text-align: center;
+      }
+    }
+  }
+
+  .review-list {
+    min-width: 290px;
+    width: 60%;
+    max-width: 400px;
+    margin-top: 10px;
+
+    &__container {
+      border-radius: 5px;
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+      margin-bottom: 10px;
+      &__imagecont {
+        position: relative;
+        img {
+          border-radius: 5px 5px 0 0;
+          height: 100px;
+          object-fit: cover;
+          width: 100%;
+        }
+
+        &__interaction {
+          position: absolute;
+          bottom: 10px;
+          right: 10px;
+          background-color: rgba(255, 255, 255, 0.705);
+          display: flex;
+          justify-content: flex-end;
+          padding: 2px 6px;
+          border-radius: 2px;
+        }
+      }
+      &__info {
+        padding: 10px;
+        &__header {
+          &__title {
+            font-weight: bold;
+          }
+          &__date {
+            font-size: 0.8rem;
+          }
+          &__links {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+
+  &__buttons {
+    button {
+      border: none;
+      background-color: rgb(49, 49, 49);
+      padding: 10px 5px;
+      margin: 20px 0px;
+      font-family: "Bungee", cursive;
+    }
+
+    .left-button {
+      padding-left: 10px;
+      border-radius: 4px 0 0 4px;
+    }
+
+    .right-button {
+      padding-right: 10px;
+      border-radius: 0 4px 4px 0;
+    }
+
+    button:hover {
+      cursor: pointer;
+      background-color: rgb(22, 22, 22);
+    }
+  }
+}

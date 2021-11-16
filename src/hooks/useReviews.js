@@ -2,10 +2,10 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { getList } from "../api/actions";
 
-export const useReviews = () => {
+export const useReviews = (initialQueries, p = 1) => {
   const [reviewList, setReviewList] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [queries, setQueries] = useState({ p: 1 });
+  const [queries, setQueries] = useState({ ...initialQueries, p });
   const [pagesAmount, setPagesAmount] = useState(1);
 
   useEffect(() => {

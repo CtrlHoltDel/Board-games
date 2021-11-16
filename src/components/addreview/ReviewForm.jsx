@@ -37,7 +37,6 @@ const ReviewForm = ({ onSubmit, categories }) => {
         id=""
         onChange={(e) => {
           setCategory(e.target.value);
-          console.log(category);
         }}
       >
         {categories.map((category) => {

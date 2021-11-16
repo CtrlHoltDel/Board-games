@@ -37,7 +37,8 @@ export const getItem = async (type, value) => {
     const { data } = await api.get(`${type}/${value}`);
     return data;
   } catch (err) {
-    console.log(err);
+    console.dir(err);
+    return null;
   }
 };
 
