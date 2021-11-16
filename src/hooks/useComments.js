@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { addItem, getList } from "../api/actions";
 
 const useComments = (endpoint, p = 1) => {
+  console.log(endpoint);
   const [comments, setComments] = useState([]);
   const [commentsLoading, setCommentsLoading] = useState(true);
   const [postUploading, setPostUploading] = useState(false);
@@ -12,12 +13,15 @@ const useComments = (endpoint, p = 1) => {
   useEffect(() => {
     const fetchComments = async () => {
       setCommentsLoading(true);
-      const { comments, count = 0 } = await getList(endpoint, queries);
-      setComments(comments);
-      setPagesAmount(Math.round(count / 10) + 1);
-      setCommentsLoading(false);
-    };
+      const res = await getList(endpoint, queries);
 
+      if (res) {
+        const { comments, count = 0 } = res;
+        setComments(comments);
+        setPagesAmount(Math.round(count / 10) + 1);
+        setCommentsLoading(false);
+      }
+    };
     fetchComments();
   }, [endpoint, queries]);
 

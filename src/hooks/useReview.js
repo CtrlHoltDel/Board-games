@@ -11,17 +11,19 @@ const useReview = (endpoint, value, user) => {
     const getReview = async () => {
       setLoading(true);
       const res = await getItem(endpoint, value);
-
+      console.log(res);
       if (!res) {
-        console.log("test");
-        setItem(null);
-        return;
+        //If there's an error
+        setItem(res);
+        setLoading(false);
+      } else {
+        //If there's no error
+        const { review } = res;
+        const bool = await checkLike(review.review_id, user);
+        setLiked(bool);
+        setItem(review);
+        setLoading(false);
       }
-
-      const bool = await checkLike(res.review.review_id, user);
-      setLiked(bool);
-      setItem(res.review);
-      setLoading(false);
     };
 
     getReview();
