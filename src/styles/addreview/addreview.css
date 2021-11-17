@@ -65,6 +65,11 @@
   font-family: "Bungee", cursive;
 }
 
+.add-review__form__submit:hover {
+  cursor: pointer;
+  color: orange;
+}
+
 .add-review-uploading {
   display: -webkit-box;
   display: -ms-flexbox;

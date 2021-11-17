@@ -1,5 +1,20 @@
+import { useContext, useState } from "react";
+import { UserContext } from "../../context/user";
+import { RiDeleteBinLine } from "react-icons/ri";
+import { AiOutlineClose } from "react-icons/ai";
+import DelModal from "./DelModal";
+
 const Card = ({ user }) => {
-  const { avatar_url, username, name, email, comments, likes, reviews } = user;
+  const { user: loggedInUser, setUser } = useContext(UserContext);
+  const [delModal, setDelModal] = useState(false);
+
+  const toggleDel = () => {
+    setDelModal(!delModal);
+  };
+
+  console.log(loggedInUser, setUser);
+
+  const { avatar_url, username, name, comments, likes, reviews } = user;
   return (
     <div className="profile-container__card">
       <div className="profile-container__card__header">
@@ -17,16 +32,6 @@ const Card = ({ user }) => {
             Username
           </div>
           <div>{username}</div>
-          <div className="profile-container__card__header__info__label">
-            Email
-          </div>
-          <div
-            onMouseOver={() => {
-              // console.log(email);
-            }}
-          >
-            {email.slice(0, 20)}...
-          </div>
         </div>
       </div>
       <div className="profile-container__card__info-grid">
@@ -45,6 +50,19 @@ const Card = ({ user }) => {
           {reviews}
         </div>
       </div>
+      <div className="profile-container__card__control-buttons">
+        <div
+          className="profile-container__card__control-buttons__del"
+          onClick={toggleDel}
+        >
+          {delModal ? (
+            <AiOutlineClose />
+          ) : (
+            <RiDeleteBinLine style={{ color: "red" }} />
+          )}
+        </div>
+      </div>
+      <DelModal toggle={delModal} setUser={setUser} user={user} />
     </div>
   );
 };

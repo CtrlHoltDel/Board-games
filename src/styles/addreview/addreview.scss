@@ -49,6 +49,11 @@ $secondary-colour: #313131;
       border-radius: 3px;
       font-family: "Bungee", cursive;
     }
+
+    &__submit:hover {
+      cursor: pointer;
+      color: orange;
+    }
   }
 }
 

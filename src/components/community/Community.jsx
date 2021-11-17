@@ -25,22 +25,34 @@ const Community = () => {
     limit: 1,
   });
 
-  if (loading || reviewLoading) return <Loading class_name="large-loading" />;
-
-  return (
-    <div className="community-container">
+  const rgInfo = () => {
+    return reviewLoading ? (
+      <Loading class_name="large-loading" height="200px" />
+    ) : (
       <RGInfo
         totalUsers={totalUsers}
         latestReview={reviewList}
         reviewAmount={reviewAmount}
       />
-      <UserList users={users} />
-      <PagePicker
-        pagesAmount={pagesAmount}
-        pagePicker={pagePicker}
-        currPage={currPage}
-        setCurrPage={setCurrPage}
-      />
+    );
+  };
+
+  return (
+    <div className="community-container">
+      {rgInfo()}
+      {loading ? (
+        <Loading class_name="large-loading" height="500px" />
+      ) : (
+        <>
+          <UserList users={users} />
+          <PagePicker
+            pagesAmount={pagesAmount}
+            pagePicker={pagePicker}
+            currPage={currPage}
+            setCurrPage={setCurrPage}
+          />
+        </>
+      )}
     </div>
   );
 };
