@@ -23,8 +23,7 @@ const ReviewForm = ({ onSubmit, categories }) => {
       setBodyError(true);
     }
 
-    if (urlValidation) {
-      console.log("test");
+    if (!urlValidation) {
       setImageError(true);
     }
 

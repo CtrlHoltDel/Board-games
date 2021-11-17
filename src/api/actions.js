@@ -77,3 +77,11 @@ export const delItem = async (endpoint) => {
     console.log(err);
   }
 };
+
+export const patchUser = async (endpoint, updateObject) => {
+  try {
+    await api.patch(endpoint, updateObject);
+  } catch (err) {
+    console.log(err);
+  }
+};

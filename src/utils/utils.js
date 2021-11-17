@@ -8,10 +8,10 @@ export const formatDate = (sqlDate) => {
   return { distance, formattedDate };
 };
 
-export const validateUrl = (url, error) => {
+export const validateUrl = (url) => {
   if (url.length === 0 || url.endsWith("jpg") || url.endsWith("png")) {
-    return false;
-  } else {
     return true;
+  } else {
+    return false;
   }
 };

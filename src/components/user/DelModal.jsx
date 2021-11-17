@@ -1,22 +1,22 @@
 import { TextField } from "@mui/material";
 import { useState } from "react";
 import { delItem } from "../../api/actions";
+import { AiOutlineClose } from "react-icons/ai";
 
-const DelModal = ({ toggle, setUser, user }) => {
+const DelModal = ({ boolToggle, setUser, user, toggleDel }) => {
   const [userInput, setUserInput] = useState("");
   const [delErr, setDelError] = useState(false);
   const [guestCheck, setGuestCheck] = useState(false);
 
   const delAccHandler = () => {
-    if (user.username === "GuestUser") {
-      setGuestCheck(true);
-      return;
-    }
-
     if (user.username !== userInput) {
       setDelError(true);
       return;
     } else {
+      if (user.username === "GuestUser") {
+        setGuestCheck(true);
+        return;
+      }
       delItem(`/users/${user.username}`);
       setUser(null);
     }
@@ -29,7 +29,10 @@ const DelModal = ({ toggle, setUser, user }) => {
   };
 
   return (
-    <div className="delete-modal" style={{ display: toggle ? "flex" : "none" }}>
+    <div
+      className="delete-modal change-modal"
+      style={{ display: boolToggle ? "flex" : "none" }}
+    >
       <div className="delete-modal__header">WARNING</div>
       <div className="delete-modal__confirmation-text">
         Deleting this account will also delete all associated comments and
@@ -48,6 +51,9 @@ const DelModal = ({ toggle, setUser, user }) => {
         onChange={({ target }) => setUserInput(target.value)}
       />
       <button onClick={delAccHandler}>{buttonText()}</button>
+      <div onClick={toggleDel} className="modal-cancel-button">
+        <AiOutlineClose />
+      </div>
     </div>
   );
 };

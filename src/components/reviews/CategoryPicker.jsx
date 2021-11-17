@@ -5,7 +5,7 @@ const CategoryPicker = ({ pickCategory }) => {
   const { categories, loading, currCategory, setCurrCategory } =
     useCategories();
 
-  if (loading) return <Loading class_name={"cat-bar"} />;
+  if (loading) return <Loading class_name={"cat-bar"} height="58px" />;
 
   const fullScreen = () => {
     return (

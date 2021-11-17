@@ -1,25 +1,32 @@
 import { useContext, useState } from "react";
 import { UserContext } from "../../context/user";
 import { RiDeleteBinLine } from "react-icons/ri";
-import { AiOutlineClose } from "react-icons/ai";
+import { BiEdit } from "react-icons/bi";
+
 import DelModal from "./DelModal";
+import EditModal from "./EditModal";
 
 const Card = ({ user }) => {
+  const { avatar_url, username, name, comments, likes, reviews } = user;
   const { user: loggedInUser, setUser } = useContext(UserContext);
   const [delModal, setDelModal] = useState(false);
+  const [editModal, setEditModal] = useState(false);
+  const [currentName, setCurrentName] = useState(name);
+  const [currentImage, setCurrentImage] = useState(avatar_url);
 
   const toggleDel = () => {
     setDelModal(!delModal);
   };
 
-  console.log(loggedInUser, setUser);
+  const toggleEdit = () => {
+    setEditModal(!editModal);
+  };
 
-  const { avatar_url, username, name, comments, likes, reviews } = user;
   return (
     <div className="profile-container__card">
       <div className="profile-container__card__header">
         <img
-          src={avatar_url}
+          src={currentImage}
           alt="User Avatar"
           className="profile-container__card__header__img"
         />
@@ -27,7 +34,7 @@ const Card = ({ user }) => {
           <div className="profile-container__card__header__info__label">
             Name
           </div>
-          <div>{name}</div>
+          <div>{currentName}</div>
           <div className="profile-container__card__header__info__label">
             Username
           </div>
@@ -50,19 +57,36 @@ const Card = ({ user }) => {
           {reviews}
         </div>
       </div>
-      <div className="profile-container__card__control-buttons">
-        <div
-          className="profile-container__card__control-buttons__del"
-          onClick={toggleDel}
-        >
-          {delModal ? (
-            <AiOutlineClose />
-          ) : (
+      {loggedInUser.username === user.username && (
+        <div className="profile-container__card__control-buttons">
+          <div
+            className="profile-container__card__control-buttons__del"
+            onClick={toggleDel}
+          >
             <RiDeleteBinLine style={{ color: "red" }} />
-          )}
+          </div>
+          <div
+            className="profile-container__card__control-buttons__del"
+            onClick={toggleEdit}
+            style={{ marginTop: "5px" }}
+          >
+            <BiEdit style={{ color: "black" }} />
+          </div>
         </div>
-      </div>
-      <DelModal toggle={delModal} setUser={setUser} user={user} />
+      )}
+      <DelModal
+        boolToggle={delModal}
+        toggleDel={toggleDel}
+        setUser={setUser}
+        user={user}
+      />
+      <EditModal
+        toggleEdit={toggleEdit}
+        boolToggle={editModal}
+        user={user}
+        setCurrentName={setCurrentName}
+        setCurrentImage={setCurrentImage}
+      />
     </div>
   );
 };

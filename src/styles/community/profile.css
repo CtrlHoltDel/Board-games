@@ -104,11 +104,22 @@
   border-radius: 4px;
 }
 
+.profile-container__card .modal-cancel-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 3px;
+  border-radius: 50%;
+}
+
+.profile-container__card .modal-cancel-button:hover {
+  cursor: pointer;
+}
+
 .profile-container__card__control-buttons {
   position: absolute;
   right: 10px;
   top: 10px;
-  z-index: 2;
 }
 
 .profile-container__card__control-buttons__del {
@@ -247,6 +258,100 @@
 
 .profile-container__comment__info__body {
   line-height: 1.4rem;
+}
+
+.edit-modal {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.edit-modal__input-field {
+  width: 90%;
+}
+
+.edit-modal__error {
+  font-size: 0.8rem;
+}
+
+.edit-modal__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+}
+
+.edit-modal__buttons .edit-modal-button {
+  width: 40%;
+  border: none;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 2.5px;
+}
+
+.edit-modal__buttons .edit-modal-button:hover {
+  cursor: pointer;
+}
+
+.edit-modal__buttons__confirm {
+  background-color: #78dd78;
+}
+
+.edit-modal__buttons__confirm:hover {
+  background-color: #71cf71;
+}
+
+.edit-modal__buttons__cancel {
+  background-color: #dd7878;
+}
+
+.edit-modal__buttons__cancel:hover {
+  background-color: #c76a6a;
+}
+
+.modal-loading {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: white;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: orange;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.modal-loading img {
+  height: 70%;
 }
 
 .delete-modal {
