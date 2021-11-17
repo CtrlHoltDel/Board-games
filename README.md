@@ -1,6 +1,6 @@
 # Board games Front End
 
-## [Live Link](https://compassionate-edison-7c69a7.netlify.app/])
+## [Live Link](https://compassionate-edison-7c69a7.netlify.app/)
 
 **_Hosted on [netlify](https://www.netlify.com//)_**
 
