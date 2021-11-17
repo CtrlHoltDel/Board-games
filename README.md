@@ -1,72 +1,61 @@
-[https://compassionate-edison-7c69a7.netlify.app/](Live Link)
+# Board games Front End
 
-# Getting Started with Create React App
+## [Live Link](https://compassionate-edison-7c69a7.netlify.app/])
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**_Hosted on [netlify](https://www.netlify.com//)_**
 
-## Available Scripts
+## [Front-end repo](https://github.com/CtrlHoltDel/board-games-back-end)
 
-In the project directory, you can run:
+## [Live API](https://chd-board-games.herokuapp.com/api)
 
-### `npm start`
+## [API Repo](https://github.com/CtrlHoltDel/board-games-back-end)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Overview
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+A front end to the aforementioned API. Created using React.
 
-### `npm test`
+## Main Tech Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### React
 
-### `npm run build`
+A framework used to create dynamic front-end interfaces.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### React Router
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Used to create a more recognisable and salient user experience.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Axios
 
-### `npm run eject`
+Used to simplify data fetching from the [back-end](https://github.com/CtrlHoltDel/board-games-back-end)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Requirements
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`node version 15.11.2`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# Creating your own local version
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Firstly clone the repo to your local machine.
 
-## Learn More
+`$ git clone https://github.com/CtrlHoltDel/board-games`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Install dependencies
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+`$ npm install`
 
-### Code Splitting
+- If done succesfully you can now type `$npm start` into your terminal and it will load up a local server.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```Javascript
 
-### Analyzing the Bundle Size
+Compiled successfully!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+You can now view board-games-front-end in the browser.
 
-### Making a Progressive Web App
+  Local:            http://localhost:3000
+  On Your Network:  http://192.168.178.25:3000
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Note that the development build is not optimized.
+To create a production build, use npm run build.
 
-### Advanced Configuration
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Navigate to either `http://localhost:3000` or `http://192.168.178.25:3000` to see the app running locally.

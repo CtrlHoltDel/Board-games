@@ -14,7 +14,7 @@ export const useReviews = (endpoint, initialQueries, p = 1) => {
       setLoading(true);
       const response = await getList(endpoint, queries);
       const { reviews, count } = response;
-      setPagesAmount(Math.round(count / 10));
+      setPagesAmount(Math.ceil(count / 10));
       setReviewList(() => {
         return [...reviews];
       });

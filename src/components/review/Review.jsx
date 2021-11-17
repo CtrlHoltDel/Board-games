@@ -28,12 +28,12 @@ const Review = (props) => {
     `/reviews/${reviewId}/comments`
   );
 
+  if (loading || commentsLoading)
+    return <Loading class_name={"large-loading"} />;
+
   if (!item) {
     return <NotFound />;
   }
-
-  if (loading || commentsLoading)
-    return <Loading class_name={"large-loading"} />;
 
   return (
     <div>

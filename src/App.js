@@ -25,10 +25,11 @@ function App() {
       <div className="App">
         <Header setUser={setUser} user={user} />
         <Switch>
+          <Route exact path="/" component={Reviews} />
           <Route exact path="/reviews" component={Reviews} />
           <Route exact path="/reviews/:reviewId" component={Review} />
           <Route exact path="/add_review">
-            {(props) => <AddReview user={user} />}
+            <AddReview user={user} />
           </Route>
           <Route exact path="/community" component={Community} />
           <Route exact path="/community/:username" component={Profile} />

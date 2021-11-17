@@ -13,7 +13,7 @@ const useUsers = () => {
     const getUsers = async () => {
       setLoading(true);
       const { users, count } = await getList("users", queries);
-      setPagesAmount(Math.round(count / 10) + 1);
+      setPagesAmount(Math.ceil(count / 10));
       setTotalUsers(count);
       setUsers(users);
       setLoading(false);

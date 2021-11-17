@@ -18,9 +18,9 @@ const useComments = (endpoint, p = 1) => {
       if (res) {
         const { comments, count = 0 } = res;
         setComments(comments);
-        setPagesAmount(Math.round(count / 10) + 1);
-        setCommentsLoading(false);
+        setPagesAmount(Math.ceil(count / 10));
       }
+      setCommentsLoading(false);
     };
     fetchComments();
   }, [endpoint, queries]);
