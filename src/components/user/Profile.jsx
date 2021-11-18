@@ -63,15 +63,3 @@ const Profile = () => {
 };
 
 export default Profile;
-
-/*
-
-avatar_url: "https://i.imgur.com/5jd7Q7T.png"
-comments: 0
-email: "guest@boredgames.com"
-likes: 1
-name: "Guest"
-reviews: 1
-username: "GuestUser"
-
-*/

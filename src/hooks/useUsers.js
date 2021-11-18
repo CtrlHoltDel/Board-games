@@ -5,6 +5,7 @@ const useUsers = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [queries, setQueries] = useState({ p: 1 });
+  const [currOrder, setCurrOrder] = useState("newest");
   const [pagesAmount, setPagesAmount] = useState(0);
   const [currPage, setCurrPage] = useState(1);
   const [totalUsers, setTotalUsers] = useState(0);
@@ -23,7 +24,16 @@ const useUsers = () => {
   }, [queries]);
 
   const pagePicker = (page) => {
-    setQueries({ p: page });
+    setQueries((currQueries) => {
+      return { ...currQueries, p: page };
+    });
+  };
+
+  const toggleAge = () => {
+    setCurrOrder(currOrder === "newest" ? "oldest" : "newest");
+    setQueries((currQueries) => {
+      return { ...currQueries, order: currOrder === "oldest" ? "desc" : "asc" };
+    });
   };
 
   return {
@@ -34,6 +44,7 @@ const useUsers = () => {
     pagePicker,
     currPage,
     setCurrPage,
+    toggleAge,
   };
 };
 

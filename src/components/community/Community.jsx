@@ -15,6 +15,7 @@ const Community = () => {
     currPage,
     setCurrPage,
     totalUsers,
+    toggleAge,
   } = useUsers();
 
   const {
@@ -44,6 +45,7 @@ const Community = () => {
         <Loading class_name="large-loading" height="500px" />
       ) : (
         <>
+          <button onClick={toggleAge}>test</button>
           <UserList users={users} />
           <PagePicker
             pagesAmount={pagesAmount}

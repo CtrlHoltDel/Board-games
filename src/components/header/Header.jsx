@@ -8,8 +8,12 @@ import MobNav from "./MobNav";
 
 const Header = ({ setUser, user: { username } }) => {
   const [mobToggle, setMobToggle] = useState(false);
+  const [isOpen, setOpen] = useState(false);
 
-  const toggleNav = () => setMobToggle((bool) => !bool);
+  const toggleNav = () => {
+    setMobToggle((bool) => !bool);
+    setOpen(!isOpen);
+  };
 
   const logout = () => {
     logoutStorage(setUser);
@@ -19,10 +23,10 @@ const Header = ({ setUser, user: { username } }) => {
     <header>
       <div className="logonav">
         <img src={logo} alt="" />
-        <NavBar username={username} />
+        <NavBar username={username} toggleNav={toggleNav} />
       </div>
       <div onClick={toggleNav} className="hamburger">
-        <Hamburger />
+        <Hamburger toggled={isOpen} />
       </div>
       {mobToggle && <MobNav toggleNav={toggleNav} username={username} />}
       <div className="user-nav-info">

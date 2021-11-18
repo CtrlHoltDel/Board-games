@@ -2,9 +2,9 @@ import { useState } from "react";
 import buttonLoad from "../../image/button_load.svg";
 
 const LoginForm = ({ onSubmit, loading }) => {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [usernameError, setUsernameError] = useState("");
+  const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
 
   return (
@@ -12,19 +12,19 @@ const LoginForm = ({ onSubmit, loading }) => {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          onSubmit({ username, password, setUsernameError, setPasswordError });
+          onSubmit({ email, password, setEmailError, setPasswordError });
         }}
       >
-        <label htmlFor="lfi__username">Username</label>
+        <label htmlFor="lfi__username">Email</label>
         <input
           type="text"
           id="lfi__username"
           className="lfi__username"
           onChange={(e) => {
-            setUsername(e.target.value);
+            setEmail(e.target.value);
           }}
         />
-        <p className="ls-error">{usernameError}</p>
+        <p className="ls-error">{emailError}</p>
         <label htmlFor="lfi__password">Password</label>
         <input
           type="password"

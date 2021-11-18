@@ -5,9 +5,11 @@ import { BiEdit } from "react-icons/bi";
 
 import DelModal from "./DelModal";
 import EditModal from "./EditModal";
+import { formatDate } from "../../utils/utils";
 
 const Card = ({ user }) => {
-  const { avatar_url, username, name, comments, likes, reviews } = user;
+  const { avatar_url, username, name, comments, likes, reviews, created } =
+    user;
   const { user: loggedInUser, setUser } = useContext(UserContext);
   const [delModal, setDelModal] = useState(false);
   const [editModal, setEditModal] = useState(false);
@@ -21,6 +23,8 @@ const Card = ({ user }) => {
   const toggleEdit = () => {
     setEditModal(!editModal);
   };
+
+  const { distance } = formatDate(created);
 
   return (
     <div className="profile-container__card">
@@ -39,6 +43,10 @@ const Card = ({ user }) => {
             Username
           </div>
           <div>{username}</div>
+          <div className="profile-container__card__header__info__label">
+            Account created
+          </div>
+          <div>{distance}</div>
         </div>
       </div>
       <div className="profile-container__card__info-grid">

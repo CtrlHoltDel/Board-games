@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/animations/button.css";
 
-const NavBar = ({ username }) => {
+const NavBar = ({ username, toggleNav }) => {
   const [currentPage, setCurrentPage] = useState("reviews");
 
   const navLink = (endpoint, buttonText) => {
@@ -18,6 +18,7 @@ const NavBar = ({ username }) => {
           className={
             currentPage === endpoint ? "full-underline" : "animated-underline"
           }
+          onClick={toggleNav}
         >
           {buttonText}
         </button>

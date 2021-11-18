@@ -11,8 +11,7 @@ const EditModal = ({
   setCurrentImage,
   setCurrentName,
 }) => {
-  const { username, avatar_url, name, email } = user;
-  console.log(user);
+  const { username, avatar_url, name } = user;
 
   const [newAvatar, setNewAvatar] = useState("");
   const [newName, setNewName] = useState("");
@@ -34,7 +33,7 @@ const EditModal = ({
       return;
     }
 
-    const submitObject = { name, avatar_url, email };
+    const submitObject = { name, avatar_url };
 
     if (newName) {
       submitObject.name = newName;

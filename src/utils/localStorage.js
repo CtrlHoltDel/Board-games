@@ -1,6 +1,6 @@
-export const storeAndSet = (setUser, username, email) => {
-  setUser({ username, email });
-  localStorage.setItem("storedUser", JSON.stringify({ username, email }));
+export const storeAndSet = (setUser, username) => {
+  setUser({ username });
+  localStorage.setItem("storedUser", JSON.stringify({ username }));
 };
 
 export const logoutStorage = (setUser) => {
