@@ -121,6 +121,7 @@
 }
 
 .reviews-main .review-list {
+  position: relative;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -196,6 +197,7 @@
 }
 
 .reviews-main .review-list__container__info {
+  position: relative;
   background-color: white;
   width: 100%;
   padding: 10px 15px;
@@ -224,6 +226,92 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.reviews-main .review-list__container__info__delete {
+  position: absolute;
+  font-size: 1.1rem;
+  top: 8px;
+  right: 10px;
+  color: red;
+  height: 30px;
+  width: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50%;
+}
+
+.reviews-main .review-list__container__info__delete:hover {
+  cursor: pointer;
+  background: #ffdfdf;
+}
+
+.reviews-main .review-list__container__info .del-modal {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  top: 0px;
+  right: 0px;
+  border-radius: 0 0 5px 5px;
+  padding: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.reviews-main .review-list__container__info .del-modal__header {
+  font-weight: bold;
+  text-align: center;
+}
+
+.reviews-main .review-list__container__info .del-modal__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.reviews-main .review-list__container__info .del-modal__buttons .modal-button {
+  border: none;
+  width: 45%;
+  border-radius: 5px;
+  padding: 8px 10px;
+  font-weight: bold;
+}
+
+.reviews-main .review-list__container__info .del-modal__buttons .modal-button:hover {
+  cursor: pointer;
+}
+
+.reviews-main .review-list__container__info .del-modal__buttons__confirm {
+  background: #81db81;
+}
+
+.reviews-main .review-list__container__info .del-modal__buttons__confirm:hover {
+  background: #509250;
+}
+
+.reviews-main .review-list__container__info .del-modal__buttons__deny {
+  background: #ec7e7e;
+}
+
+.reviews-main .review-list__container__info .del-modal__buttons__deny:hover {
+  background: #b65353;
 }
 
 .reviews-main__order {

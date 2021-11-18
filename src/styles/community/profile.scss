@@ -148,6 +148,7 @@
         }
       }
       &__info {
+        position: relative;
         padding: 10px;
         &__header {
           &__title {
@@ -160,6 +161,71 @@
             font-size: 0.8rem;
             display: flex;
             justify-content: space-between;
+          }
+        }
+        &__delete {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+
+          padding: 5px;
+          border-radius: 50%;
+          top: 5px;
+          right: 10px;
+          color: red;
+        }
+
+        &__delete:hover {
+          cursor: pointer;
+          background: rgb(241, 191, 191);
+        }
+
+        .del-modal {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          background: white;
+          top: 0;
+          left: 0;
+          border-radius: 0 0 3px 3px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: center;
+          padding-bottom: 10px;
+
+          &__buttons {
+            display: flex;
+            justify-content: space-around;
+            width: 90%;
+            .modal-button {
+              border: none;
+              width: 45%;
+              border-radius: 5px;
+              padding: 8px 10px;
+              font-weight: bold;
+            }
+
+            .modal-button:hover {
+              cursor: pointer;
+            }
+
+            &__confirm {
+              background: rgb(129, 219, 129);
+            }
+
+            &__confirm:hover {
+              background: rgb(80, 146, 80);
+            }
+
+            &__deny {
+              background: rgb(236, 126, 126);
+            }
+
+            &__deny:hover {
+              background: rgb(182, 83, 83);
+            }
           }
         }
       }

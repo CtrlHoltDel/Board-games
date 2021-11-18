@@ -27,7 +27,7 @@ const ReviewForm = ({ onSubmit, categories }) => {
       setImageError(true);
     }
 
-    if (!title.length || !body.length || urlValidation) return;
+    if (!title.length || !body.length || !urlValidation) return;
 
     await onSubmit(title, body, category, designer, imgUrl);
 
@@ -87,7 +87,7 @@ const ReviewForm = ({ onSubmit, categories }) => {
       />
       {imgError && (
         <div style={{ fontSize: ".8rem", color: "red", marginTop: "4px" }}>
-          Must be either empty or a jpeg or png.
+          Must be empty or a jpeg/png.
         </div>
       )}
       <div className="add-review__form__break"></div>

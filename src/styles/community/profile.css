@@ -183,6 +183,7 @@
 }
 
 .profile-container .review-list__container__info {
+  position: relative;
   padding: 10px;
 }
 
@@ -202,6 +203,89 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.profile-container .review-list__container__info__delete {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  padding: 5px;
+  border-radius: 50%;
+  top: 5px;
+  right: 10px;
+  color: red;
+}
+
+.profile-container .review-list__container__info__delete:hover {
+  cursor: pointer;
+  background: #f1bfbf;
+}
+
+.profile-container .review-list__container__info .del-modal {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: white;
+  top: 0;
+  left: 0;
+  border-radius: 0 0 3px 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 10px;
+}
+
+.profile-container .review-list__container__info .del-modal__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 90%;
+}
+
+.profile-container .review-list__container__info .del-modal__buttons .modal-button {
+  border: none;
+  width: 45%;
+  border-radius: 5px;
+  padding: 8px 10px;
+  font-weight: bold;
+}
+
+.profile-container .review-list__container__info .del-modal__buttons .modal-button:hover {
+  cursor: pointer;
+}
+
+.profile-container .review-list__container__info .del-modal__buttons__confirm {
+  background: #81db81;
+}
+
+.profile-container .review-list__container__info .del-modal__buttons__confirm:hover {
+  background: #509250;
+}
+
+.profile-container .review-list__container__info .del-modal__buttons__deny {
+  background: #ec7e7e;
+}
+
+.profile-container .review-list__container__info .del-modal__buttons__deny:hover {
+  background: #b65353;
 }
 
 .profile-container__buttons button {
