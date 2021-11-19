@@ -31,7 +31,6 @@ const UserReviews = ({ username }) => {
           sortReviews("created_at", currDirection ? "asc" : "desc");
         }}
       >
-        {console.log(currDirection)}
         {currDirection ? "See Oldest First" : "See Newest First"}
       </button>
       <ReviewList reviewList={reviewList} ownProfile={true} />

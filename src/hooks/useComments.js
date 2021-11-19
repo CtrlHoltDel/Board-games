@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { addItem, getList } from "../api/actions";
 
 const useComments = (endpoint, p = 1) => {
-  console.log(endpoint);
   const [comments, setComments] = useState([]);
   const [commentsLoading, setCommentsLoading] = useState(true);
   const [postUploading, setPostUploading] = useState(false);

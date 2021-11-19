@@ -14,8 +14,6 @@ const UserComments = ({ username }) => {
     setCurrPage,
   } = useComments(`/users/${username}/comments`);
 
-  console.log(pagesAmount);
-
   if (commentsLoading) return <Loading class_name="large-loading" />;
   if (!comments.length) return <div>No comments by this user</div>;
 

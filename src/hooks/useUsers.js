@@ -5,7 +5,7 @@ const useUsers = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [queries, setQueries] = useState({ p: 1 });
-  const [currOrder, setCurrOrder] = useState("newest");
+  const [currOrder, setCurrOrder] = useState(false);
   const [pagesAmount, setPagesAmount] = useState(0);
   const [currPage, setCurrPage] = useState(1);
   const [totalUsers, setTotalUsers] = useState(0);
@@ -14,8 +14,9 @@ const useUsers = () => {
     const getUsers = async () => {
       setLoading(true);
       const { users, count } = await getList("users", queries);
+      const { count: totalCount } = await getList("users");
       setPagesAmount(Math.ceil(count / 10));
-      setTotalUsers(count);
+      setTotalUsers(totalCount);
       setUsers(users);
       setLoading(false);
     };
@@ -29,10 +30,16 @@ const useUsers = () => {
     });
   };
 
-  const toggleAge = () => {
-    setCurrOrder(currOrder === "newest" ? "oldest" : "newest");
+  const toggleOrder = () => {
+    setCurrOrder(!currOrder);
     setQueries((currQueries) => {
-      return { ...currQueries, order: currOrder === "oldest" ? "desc" : "asc" };
+      return { ...currQueries, order: currOrder ? "desc" : "asc" };
+    });
+  };
+
+  const searchUsers = (term) => {
+    setQueries((currQueries) => {
+      return { ...currQueries, search: term };
     });
   };
 
@@ -44,7 +51,9 @@ const useUsers = () => {
     pagePicker,
     currPage,
     setCurrPage,
-    toggleAge,
+    toggleOrder,
+    currOrder,
+    searchUsers,
   };
 };
 

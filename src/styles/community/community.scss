@@ -38,9 +38,8 @@
   }
 
   .users-container {
-    min-width: 250px;
-    width: 80%;
-    max-width: 250px;
+    width: 250px;
+
     &__card {
       margin-top: 10px;
       align-items: center;
@@ -72,5 +71,29 @@
 
   .reviews-main__page-picker {
     margin-top: 10px;
+  }
+}
+
+.users-control {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  button {
+    margin: 5px;
+    border: none;
+    padding: 8px 15px;
+    background-image: url("../../image/dark_geometric.png");
+    color: white;
+    border-radius: 4px;
+  }
+
+  button:hover {
+    cursor: pointer;
+  }
+
+  input {
+    width: 225px;
   }
 }

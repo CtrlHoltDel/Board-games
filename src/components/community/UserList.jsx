@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 const UserList = ({ users }) => {
   return (
     <div className="users-container">
-      <h1 style={{ textAlign: "center", marginTop: "10px" }}>Users</h1>
       {users.map((user) => {
         const { username, avatar_url } = user;
 

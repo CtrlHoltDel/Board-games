@@ -8,7 +8,6 @@ const RGInfo = ({ totalUsers, latestReview, reviewAmount }) => {
 
   return (
     <div className="rg-info-card">
-      {console.log(latestReview[0])}
       <div className="rg-info-card__header">Roared Games Info</div>
       <div className="rg-info-card__info">
         <div className="rg-info-card__info__users">

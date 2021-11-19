@@ -51,9 +51,7 @@
 }
 
 .community-container .users-container {
-  min-width: 250px;
-  width: 80%;
-  max-width: 250px;
+  width: 250px;
 }
 
 .community-container .users-container__card {
@@ -90,5 +88,39 @@
 
 .community-container .reviews-main__page-picker {
   margin-top: 10px;
+}
+
+.users-control {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.users-control button {
+  margin: 5px;
+  border: none;
+  padding: 8px 15px;
+  background-image: url("../../image/dark_geometric.png");
+  color: white;
+  border-radius: 4px;
+}
+
+.users-control button:hover {
+  cursor: pointer;
+}
+
+.users-control input {
+  width: 225px;
 }
 /*# sourceMappingURL=community.css.map */
