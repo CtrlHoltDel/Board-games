@@ -15,26 +15,18 @@ const Login = ({ setUser }) => {
   };
 
   const onSubmit = async (input) => {
-    const { username, setEmailError } = input;
+    const { username } = input;
 
     setLoading(true);
 
     if (logSignToggle) {
-      // const result = await SignUpSubmit(input);
-      // if (result) storeAndSet(setUser, username);
-      // setLoading(false);
-
-      setEmailError("Invalid email");
-      console.log(input);
-      return;
+      const result = await SignUpSubmit(input);
+      if (result) storeAndSet(setUser, username);
+      setLoading(false);
     } else {
-      setEmailError("Invalid email");
-      console.log(input);
-      return;
-
-      // const result = await logIn(input);
-      // if (result) storeAndSet(setUser, username);
-      // setLoading(false);
+      const result = await logIn(input);
+      if (result) storeAndSet(setUser, username);
+      setLoading(false);
     }
   };
 
