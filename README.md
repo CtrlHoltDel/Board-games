@@ -14,6 +14,24 @@
 
 A front end to the aforementioned API. Created using React.
 
+# Preview Images
+
+## Desktop
+
+<div align="center">
+<img src="./readme-images/desktop/reviews.png" alt="home-page with reviews" width="85%"/>
+<img src="./readme-images/desktop/user.png" alt="looking at a users page" width="85%"/>
+<img src="./readme-images/desktop/postreview-desktop.png" alt="Where to add your own review" width="85%"/>
+</div>
+
+## Mobile
+
+<div align="center">
+<img src="./readme-images/mobile/reviews.png" alt="Review home-page" width="32%"/>
+<img src="./readme-images/mobile/single-review.png" alt="single review page" width="32%"/>
+<img src="./readme-images/mobile/mobile-nav.png" alt="picture of the mobile nav bar" width="32%"/>
+</div>
+
 ## Main Tech Used
 
 ### React
