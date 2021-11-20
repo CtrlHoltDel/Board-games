@@ -1,17 +1,18 @@
 import { useState } from "react";
 import { TextField } from "@mui/material";
 import { validateUrl } from "../../utils/utils";
+import Preview from "./Preview";
 
-const ReviewForm = ({ onSubmit, categories }) => {
+const ReviewForm = ({ onSubmit, categories, username }) => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
-  const [designer, setDesigner] = useState("");
   const [imgUrl, setImgUrl] = useState("");
   const [titleError, setTitleError] = useState(false);
   const [bodyError, setBodyError] = useState(false);
   const [imgError, setImageError] = useState(false);
 
   const [category, setCategory] = useState(categories[0]);
+
   const onInitialSubmit = async (e) => {
     e.preventDefault();
     const urlValidation = validateUrl(imgUrl, setImageError);
@@ -29,28 +30,15 @@ const ReviewForm = ({ onSubmit, categories }) => {
 
     if (!title.length || !body.length || !urlValidation) return;
 
-    await onSubmit(title, body, category, designer, imgUrl);
+    await onSubmit(title, body, category, "unknown", imgUrl);
 
     setTitle("");
     setBody("");
-    setDesigner("");
     setImgUrl("");
   };
 
   return (
     <form onSubmit={onInitialSubmit} className="add-review__form">
-      <select
-        className="add-review__form__dropdown"
-        name=""
-        id=""
-        onChange={(e) => {
-          setCategory(e.target.value);
-        }}
-      >
-        {categories.map((category) => {
-          return <option key={category}>{category}</option>;
-        })}
-      </select>
       <TextField
         className="add-review__form__input"
         label="Title"
@@ -91,15 +79,19 @@ const ReviewForm = ({ onSubmit, categories }) => {
         </div>
       )}
       <div className="add-review__form__break"></div>
-      <TextField
-        className="add-review__form__input"
-        label="Designer"
-        variant="filled"
-        value={designer}
+      <select
+        className="add-review__form__dropdown"
+        name=""
+        id=""
         onChange={(e) => {
-          setDesigner(e.target.value);
+          setCategory(e.target.value);
         }}
-      />
+      >
+        {categories.map((category) => {
+          return <option key={category}>{category}</option>;
+        })}
+      </select>
+      <Preview title={title} body={body} imgUrl={imgUrl} username={username} />
       <button className="add-review__form__submit">Submit</button>
     </form>
   );

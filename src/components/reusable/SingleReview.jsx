@@ -74,16 +74,10 @@ const SingleReview = ({ review, ownProfile, likedPage }) => {
         </div>
         <div className="review-list__container__info__header__links">
           <div>
-            <Link style={{ color: "#5252ff" }} to={`/reviews/${review_id}`}>
-              Read more
-            </Link>
+            <Link to={`/reviews/${review_id}`}>Read more</Link>
           </div>
           <div>
-            {!ownProfile && (
-              <Link style={{ color: "#5252ff" }} to={`community/${owner}`}>
-                {owner}
-              </Link>
-            )}
+            {!ownProfile && <Link to={`community/${owner}`}>{owner}</Link>}
           </div>
         </div>
         {username === owner && (

@@ -183,6 +183,9 @@ $secondary-colour: #313131;
             font-size: 0.9rem;
             padding-top: 10px;
             justify-content: space-between;
+            a {
+              color: #5252ff;
+            }
           }
         }
         &__delete {

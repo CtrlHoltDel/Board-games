@@ -228,6 +228,10 @@
           justify-content: space-between;
 }
 
+.reviews-main .review-list__container__info__header__links a {
+  color: #5252ff;
+}
+
 .reviews-main .review-list__container__info__delete {
   position: absolute;
   font-size: 1.1rem;

@@ -39,7 +39,11 @@ const AddReview = ({ user: { username } }) => {
 
   return (
     <div className="add-review">
-      <ReviewForm onSubmit={onSubmit} categories={categories} />
+      <ReviewForm
+        onSubmit={onSubmit}
+        categories={categories}
+        username={username}
+      />
     </div>
   );
 };
