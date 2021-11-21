@@ -65,7 +65,6 @@
       }
       &__owner {
         font-size: 0.8rem;
-
         display: inline;
       }
 
@@ -74,19 +73,30 @@
         position: absolute;
         right: 10px;
         bottom: -2px;
+
         &__like {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          border: none;
+          height: 35px;
+          width: 35px;
           border-radius: 50%;
-          height: 40px;
-          width: 40px;
-          background-color: rgb(231, 231, 231);
         }
 
         &__like:hover {
           cursor: pointer;
+        }
+
+        &__votes {
+          height: 35px;
+          width: 100px;
+        }
+
+        .interaction-circle {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: none;
+          background-color: rgb(231, 231, 231);
+          margin-left: 5px;
+          font-size: 0.8rem;
         }
       }
     }

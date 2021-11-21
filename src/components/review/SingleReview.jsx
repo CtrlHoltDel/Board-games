@@ -15,8 +15,14 @@ const SingleReview = ({ review, props, username, interaction }) => {
     votes,
   } = review;
 
-  const { currLiked, toggleLike, optimisticLike, amendVote, currVote } =
-    interaction;
+  const {
+    currLiked,
+    toggleLike,
+    optimisticLike,
+    amendVote,
+    currVote,
+    optimisticVote,
+  } = interaction;
 
   const { distance, formattedDate } = formatDate(created_at);
 
@@ -71,7 +77,7 @@ const SingleReview = ({ review, props, username, interaction }) => {
             <div className="review-page__contents__title__owner">{owner}</div>
           </Link>
           <div className="review-page__contents__title__interaction_container">
-            <div>{votes + currVote}</div>
+            <div>{votes + optimisticVote}</div>
             <button
               onClick={() => {
                 toggleLike();

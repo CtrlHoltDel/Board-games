@@ -104,6 +104,21 @@
 }
 
 .review-page__contents__title__interaction_container__like {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}
+
+.review-page__contents__title__interaction_container__like:hover {
+  cursor: pointer;
+}
+
+.review-page__contents__title__interaction_container__votes {
+  height: 35px;
+  width: 100px;
+}
+
+.review-page__contents__title__interaction_container .interaction-circle {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -114,14 +129,9 @@
       -ms-flex-align: center;
           align-items: center;
   border: none;
-  border-radius: 50%;
-  height: 40px;
-  width: 40px;
   background-color: #e7e7e7;
-}
-
-.review-page__contents__title__interaction_container__like:hover {
-  cursor: pointer;
+  margin-left: 5px;
+  font-size: 0.8rem;
 }
 
 .review-page__contents__body {

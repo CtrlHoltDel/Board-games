@@ -7,6 +7,7 @@ const useInteraction = (reviewId, username) => {
   const [currLiked, setCurrLiked] = useState(false);
   const [currVote, setCurrVote] = useState(0);
   const [optimisticLike, setOptimisticLike] = useState(0);
+  const [optimisticVote, setOptimisticVote] = useState(0);
 
   useEffect(() => {
     const getInitialInteraction = async () => {
@@ -42,6 +43,7 @@ const useInteraction = (reviewId, username) => {
       return;
     }
 
+    setOptimisticVote((optVote) => optVote + vote);
     patchVote(reviewId, { inc_votes: vote, username });
     setCurrVote((currVote) => currVote + vote);
   };
@@ -54,6 +56,7 @@ const useInteraction = (reviewId, username) => {
       optimisticLike,
       amendVote,
       currVote,
+      optimisticVote,
     },
   };
 };

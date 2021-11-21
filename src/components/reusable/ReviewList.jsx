@@ -6,6 +6,7 @@ const ReviewList = ({ reviewList, ownProfile, likedPage }) => {
       {reviewList.map((review) => {
         return (
           <SingleReview
+            key={review.review_id}
             review={review}
             ownProfile={ownProfile}
             likedPage={likedPage}
