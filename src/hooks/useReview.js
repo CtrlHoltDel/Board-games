@@ -1,11 +1,10 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { checkLike, getItem } from "../api/actions";
+import { getItem } from "../api/actions";
 
 const useReview = (endpoint, value, user) => {
   const [item, setItem] = useState();
   const [loading, setLoading] = useState(true);
-  const [liked, setLiked] = useState(false);
 
   useEffect(() => {
     const getReview = async () => {
@@ -16,8 +15,6 @@ const useReview = (endpoint, value, user) => {
         setLoading(false);
       } else {
         const { review } = res;
-        const bool = await checkLike(review.review_id, user);
-        setLiked(bool);
         setItem(review);
         setLoading(false);
       }
@@ -26,11 +23,7 @@ const useReview = (endpoint, value, user) => {
     getReview();
   }, [endpoint, value, user]);
 
-  const toggleLike = () => {
-    setLiked(!liked);
-  };
-
-  return { item, loading, liked, toggleLike };
+  return { item, loading };
 };
 
 export default useReview;

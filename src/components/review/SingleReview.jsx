@@ -2,17 +2,8 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { formatDate } from "../../utils/utils";
 import { AiFillHeart } from "react-icons/ai";
-import { patchLikeToggle } from "../../api/actions";
-import { useState } from "react";
 
-const SingleReview = ({ review, props, liked, toggleLike, username }) => {
-  const [updateLikeCount, setUpdateLikeCount] = useState(0);
-  const [initialLike, setInitialLike] = useState(liked);
-
-  const toggleOptimistic = (amount) => {
-    setUpdateLikeCount(updateLikeCount + amount);
-  };
-
+const SingleReview = ({ review, props, username, interaction }) => {
   const {
     review_img_url,
     title,
@@ -21,8 +12,11 @@ const SingleReview = ({ review, props, liked, toggleLike, username }) => {
     owner,
     review_body,
     likes,
-    review_id,
+    votes,
   } = review;
+
+  const { currLiked, toggleLike, optimisticLike, amendVote, currVote } =
+    interaction;
 
   const { distance, formattedDate } = formatDate(created_at);
 
@@ -49,6 +43,25 @@ const SingleReview = ({ review, props, liked, toggleLike, username }) => {
         {">"} {category} {">"} {title}
       </div>
       <div className="review-page__contents">
+        <div>
+          <button
+            style={{ backgroundColor: currVote === 1 && "green" }}
+            onClick={() => {
+              amendVote(1);
+            }}
+          >
+            Upvote
+          </button>
+          <div>{currVote}</div>
+          <button
+            style={{ backgroundColor: currVote === -1 && "red" }}
+            onClick={() => {
+              amendVote(-1);
+            }}
+          >
+            Downvote
+          </button>
+        </div>
         <div className="review-page__contents__title">
           <div className="review-page__contents__title__title">{title}</div>
           <div className="review-page__contents__title__date">
@@ -57,21 +70,20 @@ const SingleReview = ({ review, props, liked, toggleLike, username }) => {
           <Link to={`/community/${owner}`}>
             <div className="review-page__contents__title__owner">{owner}</div>
           </Link>
-          <div className="review-page__contents__title__like">
+          <div className="review-page__contents__title__interaction_container">
+            <div>{votes + currVote}</div>
             <button
               onClick={() => {
                 toggleLike();
-                patchLikeToggle(review_id, username);
-                toggleOptimistic(initialLike ? -1 : 1);
-                setInitialLike(!initialLike);
               }}
+              className="review-page__contents__title__interaction_container__like"
             >
-              {liked ? (
+              {currLiked ? (
                 <AiFillHeart style={{ color: "red", fontSize: "20px" }} />
               ) : (
                 <AiFillHeart style={{ color: "gray", fontSize: "20px" }} />
               )}
-              {likes + updateLikeCount}
+              {likes + optimisticLike}
             </button>
           </div>
         </div>

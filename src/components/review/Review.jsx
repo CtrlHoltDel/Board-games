@@ -11,6 +11,7 @@ import SingleReview from "./SingleReview";
 import useComments from "../../hooks/useComments";
 import CommentsList from "./CommentsList";
 import SubmitComment from "./SubmitComment";
+import useInteraction from "../../hooks/useInteraction";
 
 const Review = (props) => {
   const {
@@ -18,8 +19,10 @@ const Review = (props) => {
   } = useContext(UserContext);
 
   const { reviewId } = useParams();
-  const { item, liked, loading, toggleLike } = useReview(
-    "reviews",
+
+  const { item, loading } = useReview("reviews", reviewId, username);
+
+  const { interactionLoading, interaction } = useInteraction(
     reviewId,
     username
   );
@@ -28,7 +31,7 @@ const Review = (props) => {
     `/reviews/${reviewId}/comments`
   );
 
-  if (loading || commentsLoading)
+  if (loading || commentsLoading || interactionLoading)
     return <Loading class_name={"large-loading"} />;
 
   if (!item) {
@@ -37,13 +40,7 @@ const Review = (props) => {
 
   return (
     <div>
-      <SingleReview
-        props={props}
-        review={item}
-        liked={liked}
-        toggleLike={toggleLike}
-        username={username}
-      />
+      <SingleReview props={props} review={item} interaction={interaction} />
       <div className="review-comments-header">Comments</div>
       <SubmitComment
         addComment={addComment}

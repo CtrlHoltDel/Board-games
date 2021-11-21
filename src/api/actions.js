@@ -42,10 +42,12 @@ export const getItem = async (type, value) => {
   }
 };
 
-export const checkLike = async (reviewId, username) => {
+export const getInteraction = async (reviewId, username) => {
   try {
-    const { data } = await api.get(`/users/${username}/likes/${reviewId}`);
-    return data.liked;
+    const { data } = await api.get(
+      `/users/${username}/interaction/${reviewId}`
+    );
+    return data;
   } catch (err) {
     console.log(err);
   }
@@ -57,6 +59,16 @@ export const patchLikeToggle = async (reviewId, username) => {
       username,
     });
   } catch (err) {
+    console.log(err);
+  }
+};
+
+export const patchVote = async (reviewId, body) => {
+  console.log(body);
+  try {
+    await api.patch(`/reviews/${reviewId}`, body);
+  } catch (err) {
+    console.dir(err);
     console.log(err);
   }
 };

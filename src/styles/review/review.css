@@ -94,13 +94,16 @@
   display: inline;
 }
 
-.review-page__contents__title__like {
+.review-page__contents__title__interaction_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: absolute;
   right: 10px;
   bottom: -2px;
 }
 
-.review-page__contents__title__like button {
+.review-page__contents__title__interaction_container__like {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -117,7 +120,7 @@
   background-color: #e7e7e7;
 }
 
-.review-page__contents__title__like button:hover {
+.review-page__contents__title__interaction_container__like:hover {
   cursor: pointer;
 }
 
