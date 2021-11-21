@@ -1,11 +1,11 @@
-import SingleReview from "./SingleReview";
+import SingleReviewCard from "./SingleReviewCard";
 
 const ReviewList = ({ reviewList, ownProfile, likedPage }) => {
   return (
     <div className="review-list">
       {reviewList.map((review) => {
         return (
-          <SingleReview
+          <SingleReviewCard
             key={review.review_id}
             review={review}
             ownProfile={ownProfile}

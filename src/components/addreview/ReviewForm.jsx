@@ -55,6 +55,9 @@ const ReviewForm = ({ onSubmit, categories, username }) => {
         className="add-review__form__input"
         label="Body"
         variant="filled"
+        multiline
+        rows={4}
+        // rowsMax={4}
         error={bodyError}
         value={body}
         onChange={(e) => {

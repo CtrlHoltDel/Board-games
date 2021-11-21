@@ -33,15 +33,8 @@ const useInteraction = (reviewId, username) => {
   };
 
   const amendVote = (vote) => {
-    if (vote === -1 && currVote === -1) {
-      console.log("you cant double downvote");
-      return;
-    }
-
-    if (vote === 1 && currVote === 1) {
-      console.log("You can't double upvote");
-      return;
-    }
+    if (vote === -1 && currVote === -1) vote = 1;
+    if (vote === 1 && currVote === 1) vote = -1;
 
     setOptimisticVote((optVote) => optVote + vote);
     patchVote(reviewId, { inc_votes: vote, username });

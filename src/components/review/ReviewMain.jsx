@@ -2,8 +2,9 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { formatDate } from "../../utils/utils";
 import { AiFillHeart } from "react-icons/ai";
+import { FaArrowAltCircleUp, FaArrowAltCircleDown } from "react-icons/fa";
 
-const SingleReview = ({ review, props, username, interaction }) => {
+const ReviewMain = ({ review, props, username, interaction }) => {
   const {
     review_img_url,
     title,
@@ -25,6 +26,10 @@ const SingleReview = ({ review, props, username, interaction }) => {
   } = interaction;
 
   const { distance, formattedDate } = formatDate(created_at);
+
+  const voteColor = () => {
+    return currVote === -1 ? "red" : currVote === 1 ? "green" : "black";
+  };
 
   return (
     <div className="review-page">
@@ -49,25 +54,6 @@ const SingleReview = ({ review, props, username, interaction }) => {
         {">"} {category} {">"} {title}
       </div>
       <div className="review-page__contents">
-        <div>
-          <button
-            style={{ backgroundColor: currVote === 1 && "green" }}
-            onClick={() => {
-              amendVote(1);
-            }}
-          >
-            Upvote
-          </button>
-          <div>{currVote}</div>
-          <button
-            style={{ backgroundColor: currVote === -1 && "red" }}
-            onClick={() => {
-              amendVote(-1);
-            }}
-          >
-            Downvote
-          </button>
-        </div>
         <div className="review-page__contents__title">
           <div className="review-page__contents__title__title">{title}</div>
           <div className="review-page__contents__title__date">
@@ -77,18 +63,32 @@ const SingleReview = ({ review, props, username, interaction }) => {
             <div className="review-page__contents__title__owner">{owner}</div>
           </Link>
           <div className="review-page__contents__title__interaction_container">
-            <div>{votes + optimisticVote}</div>
+            <div className="review-page__contents__title__interaction_container__votes interaction-cont">
+              <FaArrowAltCircleUp
+                style={{ color: currVote === 1 && "green" }}
+                onClick={() => {
+                  amendVote(1);
+                }}
+                className="review-page__contents__title__interaction_container__votes__icon"
+              />
+              <div style={{ color: voteColor() }}>{votes + optimisticVote}</div>
+              <FaArrowAltCircleDown
+                style={{ color: currVote === -1 && "red" }}
+                onClick={() => {
+                  amendVote(-1);
+                }}
+                className="review-page__contents__title__interaction_container__votes__icon"
+              />
+            </div>
             <button
               onClick={() => {
                 toggleLike();
               }}
-              className="review-page__contents__title__interaction_container__like"
+              className="review-page__contents__title__interaction_container__like interaction-cont"
             >
-              {currLiked ? (
-                <AiFillHeart style={{ color: "red", fontSize: "20px" }} />
-              ) : (
-                <AiFillHeart style={{ color: "gray", fontSize: "20px" }} />
-              )}
+              <AiFillHeart
+                style={{ color: currLiked ? "red" : "gray", fontSize: "20px" }}
+              />
               {likes + optimisticLike}
             </button>
           </div>
@@ -99,20 +99,4 @@ const SingleReview = ({ review, props, username, interaction }) => {
   );
 };
 
-export default SingleReview;
-
-/*
-
-category: "strategy"
-comment_count: 0
-created_at: "2021-10-31T16:30:56.673Z"
-designer: "TD"
-likes: 0
-owner: "GuestUser"
-review_body: "I am the best overwatch player"
-review_id: 28
-review_img_url: "https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg"
-title: "Gaara"
-votes: 0
-
-*/
+export default ReviewMain;

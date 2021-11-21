@@ -1,7 +1,7 @@
 const DeleteReviewModal = ({ toggleModal, delHandler }) => {
   return (
     <div className="del-modal">
-      <div className="del-modal__header">Are you sure?</div>
+      <div className="del-modal__header">About to delete, are you sure?</div>
       <div className="del-modal__buttons">
         <button
           onClick={delHandler}

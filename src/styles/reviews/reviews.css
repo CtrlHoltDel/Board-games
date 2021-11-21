@@ -196,28 +196,97 @@
   cursor: pointer;
 }
 
-.reviews-main .review-list__container__info {
-  position: relative;
-  background-color: white;
-  width: 100%;
-  padding: 10px 15px;
+.reviews-main .review-list__container__main {
   border-radius: 0 0 4px 4px;
+  background-color: white;
+  padding: 5px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
 }
 
-.reviews-main .review-list__container__info__header {
+.reviews-main .review-list__container__main__info {
+  position: relative;
   width: 100%;
 }
 
-.reviews-main .review-list__container__info__header__title {
+.reviews-main .review-list__container__main__info__main-int {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.reviews-main .review-list__container__main__info__main-int .main-int-items {
+  border-radius: 50%;
+  padding: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-content: center;
+}
+
+.reviews-main .review-list__container__main__info__main-int .main-int-items:hover {
+  background-color: #e6e6e6;
+  border-radius: 50%;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.reviews-main .review-list__container__main__info__main-int__liked {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.reviews-main .review-list__container__main__info__main-int__delete {
+  font-size: 1.1rem;
+  color: #c4c4c4;
+}
+
+.reviews-main .review-list__container__main__info__main-int__delete:hover {
+  cursor: pointer;
+  color: red;
+  background: #ffdfdf;
+}
+
+.reviews-main .review-list__container__main__info__header {
+  width: 90%;
+}
+
+.reviews-main .review-list__container__main__info__header__title {
   font-weight: bold;
   font-size: 1.1rem;
 }
 
-.reviews-main .review-list__container__info__header__date {
+.reviews-main .review-list__container__main__info__header__date {
   font-size: 0.8rem;
 }
 
-.reviews-main .review-list__container__info__header__links {
+.reviews-main .review-list__container__main__info__header__links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -228,18 +297,13 @@
           justify-content: space-between;
 }
 
-.reviews-main .review-list__container__info__header__links a {
+.reviews-main .review-list__container__main__info__header__links a {
   color: #5252ff;
 }
 
-.reviews-main .review-list__container__info__delete {
-  position: absolute;
-  font-size: 1.1rem;
-  top: 8px;
-  right: 10px;
-  color: red;
-  height: 30px;
-  width: 30px;
+.reviews-main .review-list__container__main__interaction__votes {
+  height: 100%;
+  width: 35px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -249,15 +313,48 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-radius: 50%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-right: 10px;
 }
 
-.reviews-main .review-list__container__info__delete:hover {
+.reviews-main .review-list__container__main__interaction__votes button {
+  border: none;
+  background-color: transparent;
+  font-size: 1.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.reviews-main .review-list__container__main__interaction__votes__number {
+  height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.reviews-main .review-list__container__main__interaction__votes__up:hover {
+  color: #68bb68;
+}
+
+.reviews-main .review-list__container__main__interaction__votes__down:hover {
+  color: #d45e5e;
+}
+
+.reviews-main .review-list__container__main__interaction__votes button:hover {
   cursor: pointer;
-  background: #ffdfdf;
 }
 
-.reviews-main .review-list__container__info .del-modal {
+.reviews-main .review-list__container__main .del-modal {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -277,12 +374,12 @@
       justify-content: space-around;
 }
 
-.reviews-main .review-list__container__info .del-modal__header {
+.reviews-main .review-list__container__main .del-modal__header {
   font-weight: bold;
   text-align: center;
 }
 
-.reviews-main .review-list__container__info .del-modal__buttons {
+.reviews-main .review-list__container__main .del-modal__buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -290,7 +387,7 @@
       justify-content: space-around;
 }
 
-.reviews-main .review-list__container__info .del-modal__buttons .modal-button {
+.reviews-main .review-list__container__main .del-modal__buttons .modal-button {
   border: none;
   width: 45%;
   border-radius: 5px;
@@ -298,23 +395,23 @@
   font-weight: bold;
 }
 
-.reviews-main .review-list__container__info .del-modal__buttons .modal-button:hover {
+.reviews-main .review-list__container__main .del-modal__buttons .modal-button:hover {
   cursor: pointer;
 }
 
-.reviews-main .review-list__container__info .del-modal__buttons__confirm {
+.reviews-main .review-list__container__main .del-modal__buttons__confirm {
   background: #81db81;
 }
 
-.reviews-main .review-list__container__info .del-modal__buttons__confirm:hover {
+.reviews-main .review-list__container__main .del-modal__buttons__confirm:hover {
   background: #509250;
 }
 
-.reviews-main .review-list__container__info .del-modal__buttons__deny {
+.reviews-main .review-list__container__main .del-modal__buttons__deny {
   background: #ec7e7e;
 }
 
-.reviews-main .review-list__container__info .del-modal__buttons__deny:hover {
+.reviews-main .review-list__container__main .del-modal__buttons__deny:hover {
   background: #b65353;
 }
 

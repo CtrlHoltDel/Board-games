@@ -7,7 +7,7 @@ import Loading from "../reusable/Loading";
 import NotFound from "../reusable/NotFound";
 
 import "../../styles/review/review.css";
-import SingleReview from "./SingleReview";
+import ReviewMain from "./ReviewMain";
 import useComments from "../../hooks/useComments";
 import CommentsList from "./CommentsList";
 import SubmitComment from "./SubmitComment";
@@ -40,7 +40,7 @@ const Review = (props) => {
 
   return (
     <div>
-      <SingleReview props={props} review={item} interaction={interaction} />
+      <ReviewMain props={props} review={item} interaction={interaction} />
       <div className="review-comments-header">Comments</div>
       <SubmitComment
         addComment={addComment}
