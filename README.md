@@ -1,6 +1,6 @@
 # Board games Front End
 
-## [Live Link](https://compassionate-edison-7c69a7.netlify.app/)
+## [Live Link](https://roared-games.netlify.app/)
 
 **_Hosted on [netlify](https://www.netlify.com//)_**
 
@@ -11,6 +11,8 @@
 ## [API Repo](https://github.com/CtrlHoltDel/board-games-back-end)
 
 # Overview
+
+A website created to host a collection of reviews. As a user you can write a review, comment on other peoples reviews as well as vote them up/down and favourite them.
 
 A front end to the aforementioned API. Created using React.
 
