@@ -7,6 +7,11 @@ $primary-colour: #ffae18;
   .logonav {
     max-width: 100vw;
 
+    img {
+      height: 60px;
+      margin: 15px 0 10px 0;
+    }
+
     img:hover {
       cursor: pointer;
     }
@@ -40,22 +45,31 @@ $primary-colour: #ffae18;
 }
 
 @media only screen and (max-width: 700px) {
-  .logonav {
-    justify-content: center;
-    button {
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    .logonav {
+      button {
+        display: none;
+      }
+      img {
+        height: 50px;
+        margin: 8px 0 8px 0;
+        z-index: 6;
+      }
+    }
+    .hamburger {
+      z-index: 10;
+      color: white;
+      position: absolute;
+      right: 10px;
+      top: 7px;
+    }
+
+    .user-nav-info {
       display: none;
     }
-  }
-  .hamburger {
-    z-index: 10;
-    color: white;
-    position: absolute;
-    right: 10px;
-    top: 7px;
-  }
-
-  .user-nav-info {
-    display: none;
   }
 }
 
@@ -73,10 +87,7 @@ header {
       width: 100%;
       background-color: rgba(255, 255, 255, 0.082);
     }
-    img {
-      height: 60px;
-      margin: 15px 0 10px 0;
-    }
+
     button {
       border: none;
       font-family: "Bungee", cursive;
@@ -90,7 +101,7 @@ header {
   position: absolute;
   right: 0;
   top: 0;
-  width: 250px;
+  width: 200px;
   background-image: url("../../image/dark_geometric.png");
   height: 100vh;
   z-index: 5;
