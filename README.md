@@ -4,7 +4,7 @@
 
 **_Hosted on [netlify](https://www.netlify.com//)_**
 
-## [Front-end repo](https://github.com/CtrlHoltDel/board-games-back-end)
+## [Back-end repo](https://github.com/CtrlHoltDel/board-games-back-end)
 
 ## [Live API](https://chd-board-games.herokuapp.com/api)
 
